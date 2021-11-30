@@ -1,0 +1,4 @@
+/opt/clion-2021.2.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/morrison/myfiles/Programmation/project-5-numerical-integration
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug

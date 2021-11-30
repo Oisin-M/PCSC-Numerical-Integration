@@ -5,16 +5,13 @@
 #ifndef ABSTRACTINTEGRATIONMETHOD_H
 #define ABSTRACTINTEGRATIONMETHOD_H
 
-
 #include "DataStruct.h"
 
 class AbstractIntegrationMethod {
 public:
-    // Constructor and destructor
     AbstractIntegrationMethod(Data data);
-    virtual ~AbstractIntegrationMethod();
     
-    virtual Eigen::VectorXcd Solve(Data data)=0;
+    virtual Eigen::VectorXcd Solve()=0;
 
 protected:
     Data data;
