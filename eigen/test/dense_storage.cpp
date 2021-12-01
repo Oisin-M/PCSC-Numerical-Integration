@@ -13,7 +13,7 @@
 
 #include <Eigen/Core>
 
-#if EIGEN_HAS_TYPE_TRAITS && EIGEN_HAS_CXX11
+#if EIGEN_HAS_TYPE_TRAITS
 using DenseStorageD3x3 = Eigen::DenseStorage<double, 3, 3, 3, 3>;
 static_assert(std::is_trivially_move_constructible<DenseStorageD3x3>::value, "DenseStorage not trivially_move_constructible");
 static_assert(std::is_trivially_move_assignable<DenseStorageD3x3>::value, "DenseStorage not trivially_move_assignable");
@@ -90,8 +90,6 @@ void dense_storage_swap(int rows0, int cols0, int rows1, int cols1)
 template<typename T, int Size, std::size_t Alignment>
 void dense_storage_alignment()
 {
-  #if EIGEN_HAS_ALIGNAS
-  
   struct alignas(Alignment) Empty1 {};
   VERIFY_IS_EQUAL(std::alignment_of<Empty1>::value, Alignment);
 
@@ -109,8 +107,6 @@ void dense_storage_alignment()
   VERIFY_IS_EQUAL( (std::alignment_of<Matrix<T,Size,1,AutoAlign> >::value), default_alignment);
   struct Nested2 { Matrix<T,Size,1,AutoAlign> mat; };
   VERIFY_IS_EQUAL(std::alignment_of<Nested2>::value, default_alignment);
-
-  #endif
 }
 
 template<typename T>

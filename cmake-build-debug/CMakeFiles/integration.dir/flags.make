@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/morrison/myfiles/Programmation/project-5-numerical-integration/eigen
+CXX_INCLUDES = -I/home/majoor/myfiles/Programmation/project-5-numerical-integration/eigen
 
 CXX_FLAGS = -g -std=gnu++14
 

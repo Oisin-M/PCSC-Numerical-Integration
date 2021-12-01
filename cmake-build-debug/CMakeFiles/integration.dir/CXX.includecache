@@ -2170,21 +2170,21 @@ IndexedViewMethods.h
 ReshapedMethods.h
 ../eigen/Eigen/src/plugins/ReshapedMethods.h
 
-/home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
+/home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
 DataStruct.h
-/home/morrison/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
+/home/majoor/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
 
-/home/morrison/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
+/home/majoor/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
 Eigen/Dense
 -
 Eigen/Sparse
 -
 
-/home/morrison/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.h
+/home/majoor/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.h
 AbstractIntegrationMethod.h
-/home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
+/home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
 
-/home/morrison/myfiles/Programmation/project-5-numerical-integration/integration.cpp
+/home/majoor/myfiles/Programmation/project-5-numerical-integration/integration.cpp
 Eigen/Dense
 -
 Eigen/Sparse
@@ -2196,9 +2196,9 @@ iostream
 memory
 -
 AbstractIntegrationMethod.h
-/home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
+/home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
 TrapezoidalRule.h
-/home/morrison/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.h
+/home/majoor/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.h
 DataStruct.h
-/home/morrison/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
+/home/majoor/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
 

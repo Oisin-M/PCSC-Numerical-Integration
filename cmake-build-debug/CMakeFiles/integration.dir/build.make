@@ -53,10 +53,10 @@ RM = /opt/clion-2021.2.2/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/morrison/myfiles/Programmation/project-5-numerical-integration
+CMAKE_SOURCE_DIR = /home/majoor/myfiles/Programmation/project-5-numerical-integration
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug
+CMAKE_BINARY_DIR = /home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/integration.dir/depend.make
@@ -68,42 +68,42 @@ include CMakeFiles/integration.dir/flags.make
 
 CMakeFiles/integration.dir/integration.cpp.o: CMakeFiles/integration.dir/flags.make
 CMakeFiles/integration.dir/integration.cpp.o: ../integration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/integration.dir/integration.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/integration.dir/integration.cpp.o -c /home/morrison/myfiles/Programmation/project-5-numerical-integration/integration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/integration.dir/integration.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/integration.dir/integration.cpp.o -c /home/majoor/myfiles/Programmation/project-5-numerical-integration/integration.cpp
 
 CMakeFiles/integration.dir/integration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/integration.dir/integration.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morrison/myfiles/Programmation/project-5-numerical-integration/integration.cpp > CMakeFiles/integration.dir/integration.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/majoor/myfiles/Programmation/project-5-numerical-integration/integration.cpp > CMakeFiles/integration.dir/integration.cpp.i
 
 CMakeFiles/integration.dir/integration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/integration.dir/integration.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morrison/myfiles/Programmation/project-5-numerical-integration/integration.cpp -o CMakeFiles/integration.dir/integration.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/majoor/myfiles/Programmation/project-5-numerical-integration/integration.cpp -o CMakeFiles/integration.dir/integration.cpp.s
 
 CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.o: CMakeFiles/integration.dir/flags.make
 CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.o: ../AbstractIntegrationMethod.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.o -c /home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.o -c /home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.cpp
 
 CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.cpp > CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.cpp > CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.i
 
 CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.cpp -o CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.cpp -o CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.s
 
 CMakeFiles/integration.dir/TrapezoidalRule.cpp.o: CMakeFiles/integration.dir/flags.make
 CMakeFiles/integration.dir/TrapezoidalRule.cpp.o: ../TrapezoidalRule.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/integration.dir/TrapezoidalRule.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/integration.dir/TrapezoidalRule.cpp.o -c /home/morrison/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/integration.dir/TrapezoidalRule.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/integration.dir/TrapezoidalRule.cpp.o -c /home/majoor/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.cpp
 
 CMakeFiles/integration.dir/TrapezoidalRule.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/integration.dir/TrapezoidalRule.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morrison/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.cpp > CMakeFiles/integration.dir/TrapezoidalRule.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/majoor/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.cpp > CMakeFiles/integration.dir/TrapezoidalRule.cpp.i
 
 CMakeFiles/integration.dir/TrapezoidalRule.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/integration.dir/TrapezoidalRule.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morrison/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.cpp -o CMakeFiles/integration.dir/TrapezoidalRule.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/majoor/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.cpp -o CMakeFiles/integration.dir/TrapezoidalRule.cpp.s
 
 # Object files for target integration
 integration_OBJECTS = \
@@ -119,7 +119,7 @@ integration: CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.o
 integration: CMakeFiles/integration.dir/TrapezoidalRule.cpp.o
 integration: CMakeFiles/integration.dir/build.make
 integration: CMakeFiles/integration.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable integration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable integration"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/integration.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -131,6 +131,6 @@ CMakeFiles/integration.dir/clean:
 .PHONY : CMakeFiles/integration.dir/clean
 
 CMakeFiles/integration.dir/depend:
-	cd /home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/morrison/myfiles/Programmation/project-5-numerical-integration /home/morrison/myfiles/Programmation/project-5-numerical-integration /home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug /home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug /home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles/integration.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/majoor/myfiles/Programmation/project-5-numerical-integration /home/majoor/myfiles/Programmation/project-5-numerical-integration /home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug /home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug /home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles/integration.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/integration.dir/depend
 

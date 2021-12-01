@@ -501,7 +501,6 @@ class PlainObjectBase : public internal::dense_xpr_base<Derived>::type
     }
 #endif
 
-#if EIGEN_HAS_RVALUE_REFERENCES
     EIGEN_DEVICE_FUNC
     PlainObjectBase(PlainObjectBase&& other) EIGEN_NOEXCEPT
       : m_storage( std::move(other.m_storage) )
@@ -514,7 +513,6 @@ class PlainObjectBase : public internal::dense_xpr_base<Derived>::type
       m_storage = std::move(other.m_storage);
       return *this;
     }
-#endif
 
     /** Copy constructor */
     EIGEN_DEVICE_FUNC
@@ -527,7 +525,6 @@ class PlainObjectBase : public internal::dense_xpr_base<Derived>::type
 //       EIGEN_INITIALIZE_COEFFS_IF_THAT_OPTION_IS_ENABLED
     }
 
-    #if EIGEN_HAS_CXX11
     /** \brief Construct a row of column vector with fixed size from an arbitrary number of coefficients. \cpp11
       *
       * \only_for_vectors
@@ -587,7 +584,6 @@ class PlainObjectBase : public internal::dense_xpr_base<Derived>::type
         }
       }
     }
-    #endif  // end EIGEN_HAS_CXX11
 
     /** \sa PlainObjectBase::operator=(const EigenBase<OtherDerived>&) */
     template<typename OtherDerived>

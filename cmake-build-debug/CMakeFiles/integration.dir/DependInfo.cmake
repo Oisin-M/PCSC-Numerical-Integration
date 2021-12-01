@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.cpp" "/home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.o"
-  "/home/morrison/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.cpp" "/home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles/integration.dir/TrapezoidalRule.cpp.o"
-  "/home/morrison/myfiles/Programmation/project-5-numerical-integration/integration.cpp" "/home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles/integration.dir/integration.cpp.o"
+  "/home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.cpp" "/home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.o"
+  "/home/majoor/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.cpp" "/home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles/integration.dir/TrapezoidalRule.cpp.o"
+  "/home/majoor/myfiles/Programmation/project-5-numerical-integration/integration.cpp" "/home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/CMakeFiles/integration.dir/integration.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

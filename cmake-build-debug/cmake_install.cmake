@@ -1,4 +1,4 @@
-# Install script for directory: /home/morrison/myfiles/Programmation/project-5-numerical-integration
+# Install script for directory: /home/majoor/myfiles/Programmation/project-5-numerical-integration
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/morrison/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/majoor/myfiles/Programmation/project-5-numerical-integration/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -314,9 +314,9 @@ CMakeFiles/integration.dir/AbstractIntegrationMethod.cpp.o
  ../eigen/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  ../eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
  ../eigen/Eigen/src/plugins/ReshapedMethods.h
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.cpp
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.cpp
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
 CMakeFiles/integration.dir/TrapezoidalRule.cpp.o
  ../eigen/Eigen/Cholesky
  ../eigen/Eigen/Core
@@ -630,10 +630,10 @@ CMakeFiles/integration.dir/TrapezoidalRule.cpp.o
  ../eigen/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  ../eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
  ../eigen/Eigen/src/plugins/ReshapedMethods.h
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.cpp
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.h
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.cpp
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.h
 CMakeFiles/integration.dir/integration.cpp.o
  ../eigen/Eigen/Cholesky
  ../eigen/Eigen/Core
@@ -947,7 +947,7 @@ CMakeFiles/integration.dir/integration.cpp.o
  ../eigen/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  ../eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
  ../eigen/Eigen/src/plugins/ReshapedMethods.h
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.h
- /home/morrison/myfiles/Programmation/project-5-numerical-integration/integration.cpp
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/AbstractIntegrationMethod.h
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/DataStruct.h
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/TrapezoidalRule.h
+ /home/majoor/myfiles/Programmation/project-5-numerical-integration/integration.cpp

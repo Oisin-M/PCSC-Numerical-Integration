@@ -14,7 +14,7 @@
 
 Eigen::VectorXcd func(double x, double y) {
     Eigen::VectorXcd vec(1);
-    vec(0)= x+y;
+    vec(0)= std::complex<double>(2*x+y, 2*x-y);
     return vec;
 }
 

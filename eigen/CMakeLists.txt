@@ -1,5 +1,5 @@
 # cmake_minimum_require must be the first command of the file
-cmake_minimum_required(VERSION 3.5.0)
+cmake_minimum_required(VERSION 3.10.0)
 
 # NOTE Remove setting the policy once the minimum required CMake version is
 # increased to at least 3.15. Retain enabling the export to package registry.
@@ -26,7 +26,7 @@ if(CMAKE_VERSION VERSION_LESS 3.21.0)
   endif()
 endif()
 
-set(CMAKE_CXX_STANDARD 11 CACHE STRING "Default C++ standard")
+set(CMAKE_CXX_STANDARD 14 CACHE STRING "Default C++ standard")
 set(CMAKE_CXX_STANDARD_REQUIRED ON CACHE BOOL "Require C++ standard")
 set(CMAKE_CXX_EXTENSIONS OFF CACHE BOOL "Allow C++ extensions")
 
@@ -87,9 +87,6 @@ include(GNUInstallDirs)
 include(CMakeDependentOption)
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
-
-
-option(EIGEN_TEST_CXX11 "Enable testing of unsupported CXX11 tests (i.e. those starting with cxx11_)." OFF)
 
 macro(ei_add_cxx_compiler_flag FLAG)
   string(REGEX REPLACE "-" "" SFLAG1 ${FLAG})
