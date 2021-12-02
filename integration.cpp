@@ -22,13 +22,13 @@ int main() {
 
     Eigen::MatrixX2d boundsX(1,2); //X rows, 2 columns and doubles
     Eigen::MatrixX2d boundsY(1,2); //X rows, 2 columns and doubles
-    Eigen::MatrixX2d stepSize(1,2); //X rows, 2 columns and doubles
+    Eigen::MatrixX2i noSteps(1,2); //X rows, 2 columns and ints
     for (int i=0; i<2; i++) {
         boundsX(0,i)=i+1;
         boundsY(0,i)=i+1;
-        stepSize(0,i)=i+1;
+        noSteps(0,i)=i+1;
     }
-    Data input = { .boundsX = boundsX, .boundsY = boundsY, .stepSize = stepSize, .f = &func };
+    Data input = { .boundsX = boundsX, .boundsY = boundsY, .noSteps = noSteps, .f = &func };
 
     TrapezoidalRule solver = TrapezoidalRule(input);
     std::cout << solver.Solve();
