@@ -22,7 +22,6 @@ Eigen::VectorXcd func(double x, double y) {
 }
 
 int main() {
-
     Eigen::MatrixX2d boundsX(2,2); //X rows, 2 columns and doubles
     Eigen::MatrixX2d boundsY(2,2); //X rows, 2 columns and doubles
     Eigen::MatrixX2i noSteps(2,2); //X rows, 2 columns and ints

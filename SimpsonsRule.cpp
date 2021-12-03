@@ -11,7 +11,7 @@ Eigen::VectorXcd SimpsonsRule::Solve() {
     Eigen::VectorXcd final_vec =  Eigen::VectorXcd::Zero(data.m);
 
     for(int d=0; d<data.D; ++d){
-        Eigen::VectorXcd vec =  Eigen::VectorXcd::Zero(data.m);
+        Eigen::VectorXcd vec = Eigen::VectorXcd::Zero(data.m);
 
         double x0=data.boundsX(d,0);
         double xf=data.boundsX(d,1);
@@ -56,7 +56,7 @@ Eigen::VectorXcd SimpsonsRule::Solve() {
             }
         }
 
-        vec*=hx*hy/36;
+        vec*=hx*hy/9;
         final_vec+=vec;
     }
 

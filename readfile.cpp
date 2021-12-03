@@ -88,7 +88,7 @@ Eigen::VectorXd extractIntegers(string str)
 int main() {
     string line;
     ifstream inFile;
-    string filename = "/home/majoor/myfiles/Programmation/Project-PCSC/project-5-numerical-integration/readfile.txt";
+    string filename = "../readfile.txt";
     inFile.open(filename);
     if (!inFile) {
         cout << "Unable to open file";
