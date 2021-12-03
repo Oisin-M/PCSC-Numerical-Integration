@@ -86,8 +86,6 @@ Eigen::VectorXd extractIntegers(string str)
 }
 
 int main() {
-    int sum = 0;
-    int x;
     string line;
     ifstream inFile;
     string filename = "/home/majoor/myfiles/Programmation/Project-PCSC/project-5-numerical-integration/readfile.txt";
@@ -101,16 +99,38 @@ int main() {
     int domains_dim = vec(0);
     int outputs_dim = vec(1);
 
-    auto test = extractIntegers(ReadNthLine(filename, 3));
-    cout << "Vector : " << test << endl;
-    cout << "Last element : " << test[test.size()-1] << endl;
-    inFile.close();
-    //while (inFile >> x) {
-    //    sum = sum + x;
-    //}
+    Eigen::MatrixXd boundsX (domains_dim, 2);
+    Eigen::MatrixXd boundsY (domains_dim, 2);
+    Eigen::MatrixXd step_number (domains_dim, 2);
 
-    //inFile.close();
-    //cout << "Sum = " << sum << endl;
+
+    for (int i = 1; i < domains_dim + 1; i++) {
+        auto bounds = extractIntegers(ReadNthLine(filename, i));
+        boundsX(i - 1, 0) = bounds(0);
+        boundsX(i - 1, 1) = bounds(1);
+        boundsY(i - 1, 0) = bounds(2);
+        boundsY(i - 1, 1) = bounds(3);
+        step_number(i - 1, 0) = bounds(4);
+        step_number(i - 1, 1) = bounds(5);
+    }
+    int max_rank = 0;
+    for (int i = domains_dim + 1; i < 1 + domains_dim + outputs_dim; i++) {
+        int rank = extractIntegers(ReadNthLine(filename, i)).size();
+        if (rank > max_rank) {
+            max_rank = rank;
+        }
+    }
+    cout << "Max rank : " << max_rank << endl;
+
+    Eigen::MatrixXcd output_functions (outputs_dim, max_rank);
+
+
+    // auto test = extractIntegers(ReadNthLine(filename, 3));
+    // cout << "Vector : " << test << endl;
+    // cout << "Last element : " << test[test.size()-1] << endl;
+    cout << "boundsX" << boundsX << endl;
+    inFile.close();
+
     return 0;
 }
 
