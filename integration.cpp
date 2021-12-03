@@ -11,6 +11,7 @@
 #include "AbstractIntegrationMethod.h"
 #include "MidpointFormula.h"
 #include "TrapezoidalRule.h"
+#include "SimpsonsRule.h"
 #include "DataStruct.h"
 
 Eigen::VectorXcd func(double x, double y) {
@@ -55,6 +56,11 @@ int main() {
 
     TrapezoidalRule trapz = TrapezoidalRule(input);
     std::cout << trapz.Solve() << std::endl;
+
+    std::cout << "SimpsonsRule:" << std::endl;
+
+    SimpsonsRule simps = SimpsonsRule(input);
+    std::cout << simps.Solve() << std::endl;
 
     return 0;
 }
