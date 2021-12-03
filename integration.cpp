@@ -9,6 +9,7 @@
 #include <memory>
 
 #include "AbstractIntegrationMethod.h"
+#include "MidpointFormula.h"
 #include "TrapezoidalRule.h"
 #include "DataStruct.h"
 
@@ -37,12 +38,23 @@ int main() {
     int D=2;
     int m=2;
     Data input = { .boundsX = boundsX, .boundsY = boundsY, .noSteps = noSteps, .f = &func, .D=D, .m=m};
+    std::cout << "---Input Data---" << std::endl;
+    std::cout << "D: " << D << std::endl;
+    std::cout << "m: " << m << std::endl;
+    std::cout << "boundsX: " << std::endl << boundsX << std::endl;
+    std::cout << "boundsY: " << std::endl << boundsY << std::endl;
+    std::cout << "noSteps: " << std::endl << noSteps << std::endl << std::endl;
 
-    TrapezoidalRule solver = TrapezoidalRule(input);
-    std::cout << solver.Solve();
+    std::cout << "---Integration Methods---" <<std::endl;
+    std::cout << "MidpointFormula:" << std::endl;
 
-    //We need to delete pointer after but this doesn't work...
-    //delete input.f;
+    MidpointFormula midpt = MidpointFormula(input);
+    std::cout << midpt.Solve() << std::endl;
+
+    std::cout << "TrapezoidalRule:" << std::endl;
+
+    TrapezoidalRule trapz = TrapezoidalRule(input);
+    std::cout << trapz.Solve() << std::endl;
 
     return 0;
 }
