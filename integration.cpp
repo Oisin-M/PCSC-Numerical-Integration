@@ -21,11 +21,33 @@ Eigen::VectorXcd func(double x, double y, Eigen::MatrixXd coeff) {
     int r = coeff.rows();
     int c = coeff.cols();
 
-    Eigen::VectorXcd vec(2);
-    vec(0)= std::complex<double>(coeff(0,0)*x+y, coeff(0,0)*x-y);
-    vec(1)= std::complex<double>(-coeff(0,0)*x-y, -coeff(0,0)*y);
-    return vec;
+    Eigen::VectorXd XandY (c);
+    XandY(0) = 1;
+    for (int i = 0; i < c - 1; i++){
+        int power = ceil((i + 0.5) / 2); // gives 1, 1, 2, 2, 3, 3, ...
+        if (i % 2 == 0){
+            XandY(i + 1) = pow(x, power);
+        }
+        else {
+            XandY(i + 1) = pow(y, power);
+        }
+    }
+    Eigen::VectorXcd output (r);
+    output = coeff * XandY;
+    return output;
 }
+
+}
+
+// Eigen::VectorXcd func(double x, double y, Eigen::MatrixXd coeff) {
+//     int r = coeff.rows();
+//     int c = coeff.cols();
+
+//     Eigen::VectorXcd vec(2);
+//     vec(0)= std::complex<double>(coeff(0,0)*x+y, coeff(0,0)*x-y);
+//     vec(1)= std::complex<double>(-coeff(0,0)*x-y, -coeff(0,0)*y);
+//     return vec;
+// }
 
 
 int main() {
