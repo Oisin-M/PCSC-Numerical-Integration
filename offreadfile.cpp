@@ -143,7 +143,7 @@ Eigen::MatrixXd returnBoundsX (const string& filename){
 
 Eigen::MatrixXd returnBoundsY (const string& filename){
 
-    int domains_dim = returnDimensionsDomain(filename);
+    int domains_dim = returnDimensionDomain(filename);
     Eigen::MatrixXd boundsY (domains_dim, 2);
 
     for (int i = 1; i < domains_dim + 1; i++) {
@@ -156,7 +156,7 @@ Eigen::MatrixXd returnBoundsY (const string& filename){
 
 Eigen::MatrixXd returnSteps (const string& filename){
 
-    int domains_dim = returnDimensionsDomain(filename);
+    int domains_dim = returnDimensionDomain(filename);
     Eigen::MatrixXd numberSteps (domains_dim, 2);
 
     for (int i = 1; i < domains_dim + 1; i++) {
@@ -167,11 +167,38 @@ Eigen::MatrixXd returnSteps (const string& filename){
     return numberSteps;
 }
 
+int returnMaxRank (const string& filename){
+    int domains_dim = returnDimensionDomain(filename);
+    int outputs_dim = returnOutputDomain(filename);
+    int max_rank = 0;
+    for (int i = domains_dim + 1; i < 1 + domains_dim + outputs_dim; i++) {
+        int rank = extractIntegers(ReadNthLine(filename, i)).size();
+        if (rank > max_rank) {
+            max_rank = rank;
+        }
+    }
+    return max_rank
+}
+
+
+Eigen::MatrixXcd returnOutputFunctions (const string& filename){
+
+    Eigen::MatrixXcd output_functions(outputs_dim, max_rank / 2);
+    for (int i = domains_dim + 1; i < 1 + domains_dim + outputs_dim; i++) {
+        auto coeffs = extractIntegers(ReadNthLine(filename, i));
+        int rank = coeffs.size();
+        for (int j = 0; j < rank / 2; j++){
+            output_functions(i - domains_dim - 1, j) = complex<double>(coeffs(2*j), coeffs(2*j+1));
+        }
+    }
+}
+
 Eigen::VectorXcd function (double x, double y){
+    // define outputs_dim and output_functions
     Eigen::VectorXd XandY (max_rank / 2);
     XandY(0) = 1;
     for (i = 0; i < max_rank / 2 - 1; i++){
-        power = ceil((i + 0.5) / 2); // gives 1, 1, 2, 2, 3, 3, ...
+        int power = ceil((i + 0.5) / 2); // gives 1, 1, 2, 2, 3, 3, ...
         if (i % 2 == 0){
             XandY(i + 1) = pow(x, power);
         }
@@ -183,6 +210,8 @@ Eigen::VectorXcd function (double x, double y){
     output = output_functions * XandY;
     return output;
 }
+
+
 
 ReadTxt::ReadTxt(const string& fname) : AbstractReader(fname) {}
 
