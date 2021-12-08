@@ -13,12 +13,11 @@
 
 #include "AbstractIntegrationMethod.h"
 #include "MidpointFormula.h"
-//#include "TrapezoidalRule.h"
-//#include "SimpsonsRule.h"
+#include "TrapezoidalRule.h"
+#include "SimpsonsRule.h"
 #include "DataStruct.h"
 
 Eigen::VectorXcd func(double x, double y, Eigen::MatrixXd coeff) {
-
     int r = coeff.rows();
     int c = coeff.cols();
 
@@ -47,15 +46,15 @@ int main() {
     MidpointFormula midpt = MidpointFormula(data, &func);
     std::cout << midpt.Solve() << std::endl;
 
-//    std::cout << "TrapezoidalRule:" << std::endl;
-//
-//    TrapezoidalRule trapz = TrapezoidalRule(data, &func);
-//    std::cout << trapz.Solve() << std::endl;
-//
-//    std::cout << "SimpsonsRule:" << std::endl;
-//
-//    SimpsonsRule simps = SimpsonsRule(data, &func);
-//    std::cout << simps.Solve() << std::endl;
+    std::cout << "TrapezoidalRule:" << std::endl;
+
+    TrapezoidalRule trapz = TrapezoidalRule(data, &func);
+    std::cout << trapz.Solve() << std::endl;
+
+    std::cout << "SimpsonsRule:" << std::endl;
+
+    SimpsonsRule simps = SimpsonsRule(data, &func);
+    std::cout << simps.Solve() << std::endl;
 
     return 0;
 }

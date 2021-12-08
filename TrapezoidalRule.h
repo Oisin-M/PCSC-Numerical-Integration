@@ -9,7 +9,7 @@
 
 class TrapezoidalRule : public AbstractIntegrationMethod {
 public:
-    TrapezoidalRule(Data data);
+    TrapezoidalRule(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXd coeff));
     Eigen::VectorXcd Solve();
 };
 

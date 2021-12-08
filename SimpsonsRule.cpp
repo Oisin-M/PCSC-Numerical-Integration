@@ -20,39 +20,39 @@ Eigen::VectorXcd SimpsonsRule::Solve() {
         double hx = ((xf-x0)/data.noSteps(d, 0))/2;
         double hy = ((yf-y0)/data.noSteps(d, 1))/2;
 
-        vec += data.f(x0, y0);
-        vec += data.f(x0, yf);
-        vec += data.f(xf, y0);
-        vec += data.f(xf, yf);
+        vec += f(x0, y0, data.coefficients);
+        vec += f(x0, yf, data.coefficients);
+        vec += f(xf, y0, data.coefficients);
+        vec += f(xf, yf, data.coefficients);
 
         for (int i=1; i<=data.noSteps(d,1); ++i) {
-            vec+=4*data.f(x0, y0+(2*i-1)*hy);
-            vec+=4*data.f(xf, y0+(2*i-1)*hy);
+            vec+=4*f(x0, y0+(2*i-1)*hy, data.coefficients);
+            vec+=4*f(xf, y0+(2*i-1)*hy, data.coefficients);
             if (i!=data.noSteps(d,1)) {
-                vec+=2*data.f(x0, y0+(2*i)*hy);
-                vec+=2*data.f(xf, y0+(2*i)*hy);
+                vec+=2*f(x0, y0+(2*i)*hy, data.coefficients);
+                vec+=2*f(xf, y0+(2*i)*hy, data.coefficients);
             }
 
             for (int j=1; j<=data.noSteps(d,0); ++j) {
-                vec+=16*data.f(x0+(2*j-1)*hx, y0+(2*i-1)*hy);
+                vec+=16*f(x0+(2*j-1)*hx, y0+(2*i-1)*hy, data.coefficients);
                 if (i!=data.noSteps(d,1)) {
-                    vec+=8*data.f(x0+(2*j-1)*hx, y0+(2*i)*hy);
+                    vec+=8*f(x0+(2*j-1)*hx, y0+(2*i)*hy, data.coefficients);
                     if (j!=data.noSteps(d,0)) {
-                        vec+=4*data.f(x0+(2*j)*hx, y0+(2*i)*hy);
+                        vec+=4*f(x0+(2*j)*hx, y0+(2*i)*hy, data.coefficients);
                     }
                 }
                 if (j!=data.noSteps(d,0)) {
-                    vec+=8*data.f(x0+(2*j)*hx, y0+(2*i-1)*hy);
+                    vec+=8*f(x0+(2*j)*hx, y0+(2*i-1)*hy, data.coefficients);
                 }
             }
         }
 
         for (int j=1; j<=data.noSteps(d,0); ++j) {
-            vec+=4*data.f(x0+(2*j-1)*hx, y0);
-            vec+=4*data.f(x0+(2*j-1)*hx, yf);
+            vec+=4*f(x0+(2*j-1)*hx, y0, data.coefficients);
+            vec+=4*f(x0+(2*j-1)*hx, yf, data.coefficients);
             if (j!=data.noSteps(d,0)) {
-                vec+=2*data.f(x0+(2*j)*hx, y0);
-                vec+=2*data.f(x0+(2*j)*hx, yf);
+                vec+=2*f(x0+(2*j)*hx, y0, data.coefficients);
+                vec+=2*f(x0+(2*j)*hx, yf, data.coefficients);
             }
         }
 
@@ -63,4 +63,4 @@ Eigen::VectorXcd SimpsonsRule::Solve() {
     return final_vec;
 }
 
-SimpsonsRule::SimpsonsRule(Data data) : AbstractIntegrationMethod(data) {}
+SimpsonsRule::SimpsonsRule(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXd coeff)) : AbstractIntegrationMethod(data, f) {}
