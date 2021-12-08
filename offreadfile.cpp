@@ -137,11 +137,12 @@ Eigen::MatrixXd returnBoundsX (const string& filename){
         auto bounds = extractIntegers(ReadNthLine(filename, i));
         boundsX(i - 1, 0) = bounds(0);
         boundsX(i - 1, 1) = bounds(1);
+    }
 
     return boundsX;
 }
 
-Eigen::MatrixXd returnBoundsY (const string& filename){
+Eigen::MatrixXd returnBoundsY (const string& filename) {
 
     int domains_dim = returnDimensionDomain(filename);
     Eigen::MatrixXd boundsY (domains_dim, 2);
@@ -150,6 +151,7 @@ Eigen::MatrixXd returnBoundsY (const string& filename){
         auto bounds = extractIntegers(ReadNthLine(filename, i));
         boundsY(i - 1, 0) = bounds(2);
         boundsY(i - 1, 1) = bounds(3);
+    }
 
     return boundsY;
 }
@@ -163,13 +165,14 @@ Eigen::MatrixXd returnSteps (const string& filename){
         auto bounds = extractIntegers(ReadNthLine(filename, i));
         numberSteps(i - 1, 0) = bounds(4);
         numberSteps(i - 1, 1) = bounds(5);
+    }
 
     return numberSteps;
 }
 
 int returnMaxRank (const string& filename){
     int domains_dim = returnDimensionDomain(filename);
-    int outputs_dim = returnOutputDomain(filename);
+    int outputs_dim = returnDimensionOutput(filename);
     int max_rank = 0;
     for (int i = domains_dim + 1; i < 1 + domains_dim + outputs_dim; i++) {
         int rank = extractIntegers(ReadNthLine(filename, i)).size();
@@ -197,7 +200,7 @@ Eigen::VectorXcd function (double x, double y){
     // define outputs_dim and output_functions
     Eigen::VectorXd XandY (max_rank / 2);
     XandY(0) = 1;
-    for (i = 0; i < max_rank / 2 - 1; i++){
+    for (int i = 0; i < max_rank / 2 - 1; i++){
         int power = ceil((i + 0.5) / 2); // gives 1, 1, 2, 2, 3, 3, ...
         if (i % 2 == 0){
             XandY(i + 1) = pow(x, power);

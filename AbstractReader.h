@@ -9,11 +9,9 @@
 
 class AbstractReader {
 public:
-    AbstractReader(std::string filename) {
-        fname=filename;
-    };
-    Data OutputData(std::string fname);
-private:
+    AbstractReader(std::string filename);
+    virtual Data OutputData()=0;
+protected:
     std::string fname;
 };
 #endif //PROJECT5_ABSTRACTREADER_H

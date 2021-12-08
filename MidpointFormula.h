@@ -9,7 +9,7 @@
 
 class MidpointFormula : public AbstractIntegrationMethod {
 public:
-    MidpointFormula(Data data);
+    MidpointFormula(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXd coeff));
     Eigen::VectorXcd Solve();
 };
 

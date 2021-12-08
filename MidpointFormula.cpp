@@ -10,6 +10,8 @@ Eigen::VectorXcd MidpointFormula::Solve() {
 
     Eigen::VectorXcd final_vec =  Eigen::VectorXcd::Zero(data.m);
 
+
+
     for(int d=0; d<data.D; ++d){
         Eigen::VectorXcd vec =  Eigen::VectorXcd::Zero(data.m);
 
@@ -25,7 +27,7 @@ Eigen::VectorXcd MidpointFormula::Solve() {
             for (int j=1; j<=data.noSteps(d,0); ++j) {
                 double xj=x0+j*hx;
 
-                vec+=data.f((xj-hx+xj)/2, (yi-hy+yi)/2);
+                vec+=f((xj-hx+xj)/2, (yi-hy+yi)/2, data.coefficients);
             }
         }
 
@@ -36,4 +38,4 @@ Eigen::VectorXcd MidpointFormula::Solve() {
     return final_vec;
 }
 
-MidpointFormula::MidpointFormula(Data data) : AbstractIntegrationMethod(data) {}
+MidpointFormula::MidpointFormula(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXd coeff)) : AbstractIntegrationMethod(data, f) {}
