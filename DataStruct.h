@@ -12,7 +12,7 @@ struct Data {
     Eigen::MatrixX2d boundsX; //X rows, 2 columns and doubles
     Eigen::MatrixX2d boundsY; //X rows, 2 columns and doubles
     Eigen::MatrixX2i noSteps; //X rows, 2 columns and ints
-    Eigen::MatrixXcd coefficients; //pointer to function which returns complex vector
+    Eigen::MatrixXcd coefficients; //store coefficients of polynomial
     int D;
     int m;
 };

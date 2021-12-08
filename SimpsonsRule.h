@@ -9,7 +9,7 @@
 
 class SimpsonsRule : public AbstractIntegrationMethod {
 public:
-    SimpsonsRule(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXd coeff));
+    SimpsonsRule(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd coeff));
     Eigen::VectorXcd Solve();
 };
 

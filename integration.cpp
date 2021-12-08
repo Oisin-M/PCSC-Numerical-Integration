@@ -17,7 +17,7 @@
 #include "SimpsonsRule.h"
 #include "DataStruct.h"
 
-Eigen::VectorXcd func(double x, double y, Eigen::MatrixXd coeff) {
+Eigen::VectorXcd func(double x, double y, Eigen::MatrixXcd coeff) {
     int r = coeff.rows();
     int c = coeff.cols();
 
@@ -37,21 +37,9 @@ Eigen::VectorXcd func(double x, double y, Eigen::MatrixXd coeff) {
     return output;
 }
 
-}
-
-// Eigen::VectorXcd func(double x, double y, Eigen::MatrixXd coeff) {
-//     int r = coeff.rows();
-//     int c = coeff.cols();
-
-//     Eigen::VectorXcd vec(2);
-//     vec(0)= std::complex<double>(coeff(0,0)*x+y, coeff(0,0)*x-y);
-//     vec(1)= std::complex<double>(-coeff(0,0)*x-y, -coeff(0,0)*y);
-//     return vec;
-// }
-
 
 int main() {
-    std::string filename = "test.txt";
+    std::string filename = "readfile.txt";
     TxtReader reader = TxtReader(filename);
     Data data = reader.OutputData();
 
