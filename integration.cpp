@@ -39,7 +39,7 @@ Eigen::VectorXcd func(double x, double y, Eigen::MatrixXcd coeff) {
 
 
 int main() {
-    std::string filename = "readfile.txt";
+    std::string filename = "../readfile.txt";
     TxtReader reader = TxtReader(filename);
     Data data = reader.OutputData();
 

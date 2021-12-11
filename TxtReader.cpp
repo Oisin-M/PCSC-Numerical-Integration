@@ -15,10 +15,10 @@ Data TxtReader::OutputData() {
     std::cout << fname << std::endl;
 
     std::ifstream file;
-    file.open(fname);
 
     try {
         file.open(fname);
+        std::cout << "File opened successfully" << std::endl;
     }
     catch (std::ios_base::failure& e) {
         std::cerr << "File error: " << e.what() << std::endl;
