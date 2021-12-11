@@ -12,16 +12,17 @@ Data TxtReader::OutputData() {
     int m;
     int l;
 
-    std::cout << fname << std::endl;
-
     std::ifstream file;
 
-    try {
-        file.open(fname);
-        std::cout << "File opened successfully" << std::endl;
+    file.open(fname);
+
+    if (file.is_open())
+    {
+        std::cout << "Successfully opened file " << fname << std::endl;
     }
-    catch (std::ios_base::failure& e) {
-        std::cerr << "File error: " << e.what() << std::endl;
+    else {
+        std::cerr << "Failed to open file " << fname << std::endl;
+        std::cout << "Failed to open file" << fname << std::endl;
         exit(1);
     }
 
