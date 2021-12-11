@@ -1,0 +1,69 @@
+\hypertarget{class_midpoint_formula}{}\section{Midpoint\+Formula Class Reference}
+\label{class_midpoint_formula}\index{Midpoint\+Formula@{Midpoint\+Formula}}
+
+
+Class implementing the Midpoint Formula approximation of integrals.  
+
+
+
+
+{\ttfamily \#include $<$Midpoint\+Formula.\+h$>$}
+
+
+
+Inheritance diagram for Midpoint\+Formula\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_midpoint_formula__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Midpoint\+Formula\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_midpoint_formula__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_midpoint_formula_ad3c444776b53996d50dbf88a61c36c8c}\label{class_midpoint_formula_ad3c444776b53996d50dbf88a61c36c8c}} 
+{\bfseries Midpoint\+Formula} (\hyperlink{struct_data}{Data} data, Eigen\+::\+Vector\+Xcd($\ast$f)(double x, double y, Eigen\+::\+Matrix\+Xcd coeff))
+\item 
+Eigen\+::\+Vector\+Xcd \hyperlink{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}{Solve} ()
+\begin{DoxyCompactList}\small\item\em Method to compute approximate value of the integral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class implementing the Midpoint Formula approximation of integrals. 
+
+Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlink{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}{Solve()} method returning the Midpoint Formula approximation of the integral $(x_1,y_1)$ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}\label{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}} 
+\index{Midpoint\+Formula@{Midpoint\+Formula}!Solve@{Solve}}
+\index{Solve@{Solve}!Midpoint\+Formula@{Midpoint\+Formula}}
+\subsubsection{\texorpdfstring{Solve()}{Solve()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Midpoint\+Formula\+::\+Solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method to compute approximate value of the integral. 
+
+\begin{DoxyReturn}{Returns}
+The complex vector result of the integral approximation 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_abstract_integration_method_af76e5bdce7d0b139d07e920fa29c1c34}{Abstract\+Integration\+Method}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Midpoint\+Formula.\+h\item 
+Midpoint\+Formula.\+cpp\end{DoxyCompactItemize}

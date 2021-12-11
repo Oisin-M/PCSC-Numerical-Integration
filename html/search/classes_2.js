@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['midpointformula',['MidpointFormula',['../classMidpointFormula.html',1,'']]]
+  ['midpointformula',['MidpointFormula',['../class_midpoint_formula.html',1,'']]]
 ];

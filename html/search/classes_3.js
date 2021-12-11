@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readtxt',['ReadTxt',['../classReadTxt.html',1,'']]]
+  ['simpsonsrule',['SimpsonsRule',['../class_simpsons_rule.html',1,'']]]
 ];

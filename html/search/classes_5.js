@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['trapezoidalrule',['TrapezoidalRule',['../classTrapezoidalRule.html',1,'']]],
-  ['txtreader',['TxtReader',['../classTxtReader.html',1,'']]]
+  ['trapezoidalrule',['TrapezoidalRule',['../class_trapezoidal_rule.html',1,'']]],
+  ['txtreader',['TxtReader',['../class_txt_reader.html',1,'']]]
 ];

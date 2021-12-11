@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['abstractintegrationmethod',['AbstractIntegrationMethod',['../classAbstractIntegrationMethod.html',1,'']]],
-  ['abstractreader',['AbstractReader',['../classAbstractReader.html',1,'']]]
+  ['abstractintegrationmethod',['AbstractIntegrationMethod',['../class_abstract_integration_method.html',1,'']]],
+  ['abstractreader',['AbstractReader',['../class_abstract_reader.html',1,'']]]
 ];
