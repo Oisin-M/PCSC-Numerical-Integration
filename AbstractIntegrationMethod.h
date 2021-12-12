@@ -8,7 +8,7 @@
 #include "DataStruct.h"
 
 /**
-* Takes as input a Data struct and implements a Solve() method returning the approximation of the integral
+* Takes as input a Data struct and implements a Solve() method returning the approximation of the 2D or 1D integral
 * \brief Abstract class for implementation of integration algorithms
 */
 
@@ -18,7 +18,7 @@ public:
     */
     AbstractIntegrationMethod(Data data, Eigen::VectorXcd (*function)(double x, double y, Eigen::MatrixXcd coeff));
 
-/** \brief Method to compute approximate value of the integral
+/** \brief Method to compute approximate value of the 2D or 1D integral
  */
 /*!
 \return The complex vector result of the integral approximation
