@@ -12,6 +12,7 @@ Data TxtReader::OutputData() {
     int m;
     int l;
 
+
     std::ifstream file;
 
     file.open(fname);
@@ -27,6 +28,10 @@ Data TxtReader::OutputData() {
     }
 
     file >> D >> m >> l;
+
+    assert(D>0);
+    assert(m>0);
+    assert(l>0);
 
     Eigen::MatrixX2d boundsX(D,2); //X rows, 2 columns and doubles
     Eigen::MatrixX2d boundsY(D,2); //X rows, 2 columns and doubles
