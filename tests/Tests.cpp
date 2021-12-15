@@ -5,7 +5,6 @@
 #include <cmath>
 #include "../googletest/googletest/googletest/include/gtest/gtest.h"
 #include "../googletest/googletest/googletest/include/gtest/gtest-death-test.h"
-#include "../test_googletest.h"
 #include "../TxtReader.cpp"
 #include "../MidpointFormula.h"
 #include "../TrapezoidalRule.h"
@@ -14,7 +13,7 @@
 #include "../AbstractIntegrationMethod.h"
 
 
-Eigen::VectorXcd func(double x, double y, Eigen::MatrixXcd coeff) {
+Eigen::VectorXcd func(double x, double y, Eigen::MatrixXcd &coeff) {
     int r = coeff.rows();
     int c = coeff.cols();
 
