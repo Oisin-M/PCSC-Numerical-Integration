@@ -2,6 +2,15 @@
 \label{class_trapezoidal_rule}\index{Trapezoidal\+Rule@{Trapezoidal\+Rule}}
 
 
+Class implementing the Trapezoidal Rule approximation of integrals in 2D or 1D.  
+
+
+
+
+{\ttfamily \#include $<$Trapezoidal\+Rule.\+h$>$}
+
+
+
 Inheritance diagram for Trapezoidal\+Rule\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -22,12 +31,17 @@ Collaboration diagram for Trapezoidal\+Rule\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_trapezoidal_rule_ac366b3b5a8758ad00590f029c0b0bdd7}\label{class_trapezoidal_rule_ac366b3b5a8758ad00590f029c0b0bdd7}} 
-{\bfseries Trapezoidal\+Rule} (\hyperlink{struct_data}{Data} data, Eigen\+::\+Vector\+Xcd($\ast$f)(double x, double y, Eigen\+::\+Matrix\+Xcd coeff))
-\item 
+\hyperlink{class_trapezoidal_rule_ac366b3b5a8758ad00590f029c0b0bdd7}{Trapezoidal\+Rule} (\hyperlink{struct_data}{Data} data, Eigen\+::\+Vector\+Xcd($\ast$f)(double x, double y, Eigen\+::\+Matrix\+Xcd coeff))
+\begin{DoxyCompactList}\small\item\em Initialiser setting the data as a \hyperlink{struct_data}{Data} struct and also the function to integrate. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xcd \hyperlink{class_trapezoidal_rule_ae822d86948bdc8876bf524cd620e11b8}{Solve} ()
-\begin{DoxyCompactList}\small\item\em Method to compute approximate value of the integral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method to compute approximate value of the 2D or 1D integral with Trapezoidal Rule. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+Class implementing the Trapezoidal Rule approximation of integrals in 2D or 1D. 
+
+Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlink{class_trapezoidal_rule_ae822d86948bdc8876bf524cd620e11b8}{Solve()} method returning the 2D or 1D Trapezoidal Rule approximation of the integral 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_trapezoidal_rule_ae822d86948bdc8876bf524cd620e11b8}\label{class_trapezoidal_rule_ae822d86948bdc8876bf524cd620e11b8}} 
@@ -38,7 +52,9 @@ Eigen\+::\+Vector\+Xcd \hyperlink{class_trapezoidal_rule_ae822d86948bdc8876bf524
 
 
 
-Method to compute approximate value of the integral. 
+Method to compute approximate value of the 2D or 1D integral with Trapezoidal Rule. 
+
+Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlink{class_trapezoidal_rule_ae822d86948bdc8876bf524cd620e11b8}{Solve()} method returning the 2D or 1D Trapezoidal Rule approximation of the integral \begin{eqnarray*} I \approx& \frac{h_x h_y}{4} \left[ f(x_0, y_0)+f(x_0,y_f)+f(x_f,y_0)+f(x_f,y_f) + 4 \sum_{i=1}^{n_y-1} \sum_{j=1}^{n_x-1} f(x_j, y_i) \right.\\ & \left. + 2 \sum_{i=1}^{n_y-1} \left(f(x_0, y_i)+f(x_f,y_i)\right) + 2 \sum_{j=1}^{n_x-1} \left(f(x_j, y_0)+f(x_j,y_f)\right) \right] \end{eqnarray*}
 
 \begin{DoxyReturn}{Returns}
 The complex vector result of the integral approximation 

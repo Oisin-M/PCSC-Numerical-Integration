@@ -4,7 +4,14 @@ The following steps should be undertaken to run our code
 \begin{DoxyItemize}
 \item clone the repository with {\ttfamily git clone git@gitlab.\+epfl.\+ch\+:majoor/project-\/5-\/numerical-\/integration.\+git}
 \item fetch the submodules (Eigen and Googletest) using {\ttfamily git submodule update -\/-\/init}
-\item build the executable using C\+M\+A\+KE {\ttfamily \mbox{[}to be done\mbox{]}}
+\item build the executable using C\+M\+A\+KE 
+\begin{DoxyCode}
+mkdir build
+cd build
+cmake ..
+\end{DoxyCode}
+
+\item run the executable {\ttfamily ./integration}
 \end{DoxyItemize}
 
 This code will produce the following output\+: 
