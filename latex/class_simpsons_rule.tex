@@ -2,6 +2,15 @@
 \label{class_simpsons_rule}\index{Simpsons\+Rule@{Simpsons\+Rule}}
 
 
+Class implementing the Simpson\textquotesingle{}s Rule approximation of integrals in 2D or 1D.  
+
+
+
+
+{\ttfamily \#include $<$Simpsons\+Rule.\+h$>$}
+
+
+
 Inheritance diagram for Simpsons\+Rule\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -22,12 +31,17 @@ Collaboration diagram for Simpsons\+Rule\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_simpsons_rule_af880433d19d6041cdedb081b542a195b}\label{class_simpsons_rule_af880433d19d6041cdedb081b542a195b}} 
-{\bfseries Simpsons\+Rule} (\hyperlink{struct_data}{Data} data, Eigen\+::\+Vector\+Xcd($\ast$f)(double x, double y, Eigen\+::\+Matrix\+Xcd coeff))
-\item 
+\hyperlink{class_simpsons_rule_af880433d19d6041cdedb081b542a195b}{Simpsons\+Rule} (\hyperlink{struct_data}{Data} data, Eigen\+::\+Vector\+Xcd($\ast$f)(double x, double y, Eigen\+::\+Matrix\+Xcd coeff))
+\begin{DoxyCompactList}\small\item\em Initialiser setting the data as a \hyperlink{struct_data}{Data} struct and also the function to integrate. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xcd \hyperlink{class_simpsons_rule_a9925b07e44be9fc1644d3cbeb742078c}{Solve} ()
-\begin{DoxyCompactList}\small\item\em Method to compute approximate value of the integral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method to compute approximate value of the 2D or 1D integral with Simpson\textquotesingle{}s Rule. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+Class implementing the Simpson\textquotesingle{}s Rule approximation of integrals in 2D or 1D. 
+
+Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlink{class_simpsons_rule_a9925b07e44be9fc1644d3cbeb742078c}{Solve()} method returning the 2D or 1D Simpson\textquotesingle{}s Rule approximation of the integral 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_simpsons_rule_a9925b07e44be9fc1644d3cbeb742078c}\label{class_simpsons_rule_a9925b07e44be9fc1644d3cbeb742078c}} 
@@ -38,7 +52,9 @@ Eigen\+::\+Vector\+Xcd \hyperlink{class_simpsons_rule_a9925b07e44be9fc1644d3cbeb
 
 
 
-Method to compute approximate value of the integral. 
+Method to compute approximate value of the 2D or 1D integral with Simpson\textquotesingle{}s Rule. 
+
+Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlink{class_simpsons_rule_a9925b07e44be9fc1644d3cbeb742078c}{Solve()} method returning the 2D or 1D Simpson\textquotesingle{}s Rule approximation of the integral \begin{eqnarray*} I \approx & \frac{h_x h_y}{36} \left[ f(x_0, y_0)+f(x_0,y_f)+f(x_f,y_0)+f(x_f,y_f) \right.\\ & + 4 \left( \sum_{i=1}^{n_y} \left[f(x_0, y_{2i-1})+f(x_f,y_{2i-1})\right] + \sum_{j=1}^{n_x} \left[f(x_{2j-1}, y_0)+f(x_{2j-1},y_f)\right] \right)\\ & + 2 \left( \sum_{i=1}^{n_y-1} \left[f(x_0, y_{2i})+f(x_f,y_{2i})\right] + \sum_{j=1}^{n_x-1} \left[f(x_{2j}, y_0)+f(x_{2j},y_f)\right] \right) \\ & + 4 \left( \sum_{i=1}^{n_y-1} \sum_{j=1}^{n_x-1} f(x_{2j}, y_{2i}) \right) + 16 \left( \sum_{i=1}^{n_y} \sum_{j=1}^{n_x} f(x_{2j-1}, y_{2i-1}) \right) \\ & \left. +8 \left( \sum_{i=1}^{n_y} \sum_{j=1}^{n_x-1} f(x_{2j}, y_{2i-1}) + \sum_{i=1}^{n_y-1} \sum_{j=1}^{n_x} f(x_{2j-1}, y_{2i}) \right) \right] \end{eqnarray*}
 
 \begin{DoxyReturn}{Returns}
 The complex vector result of the integral approximation 

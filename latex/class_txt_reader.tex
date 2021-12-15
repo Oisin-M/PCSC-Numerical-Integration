@@ -2,6 +2,15 @@
 \label{class_txt_reader}\index{Txt\+Reader@{Txt\+Reader}}
 
 
+Class implementing reading data from T\+XT riles.  
+
+
+
+
+{\ttfamily \#include $<$Txt\+Reader.\+h$>$}
+
+
+
 Inheritance diagram for Txt\+Reader\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -22,12 +31,17 @@ Collaboration diagram for Txt\+Reader\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_txt_reader_acbef0ef9c6034581d76a3b9e305f1508}\label{class_txt_reader_acbef0ef9c6034581d76a3b9e305f1508}} 
-{\bfseries Txt\+Reader} (std\+::string filename)
-\item 
+\hyperlink{class_txt_reader_acbef0ef9c6034581d76a3b9e305f1508}{Txt\+Reader} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Initialiser setting the filename. \end{DoxyCompactList}\item 
 \hyperlink{struct_data}{Data} \hyperlink{class_txt_reader_a30786dcd83c2f24dd26e83cb5fd934ab}{Output\+Data} ()
-\begin{DoxyCompactList}\small\item\em Method to compute data as \hyperlink{struct_data}{Data} struct from file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method to read data from file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+Class implementing reading data from T\+XT riles. 
+
+Takes as input a filename and returns a \hyperlink{struct_data}{Data} struct that can be passed to the integration methods 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_txt_reader_a30786dcd83c2f24dd26e83cb5fd934ab}\label{class_txt_reader_a30786dcd83c2f24dd26e83cb5fd934ab}} 
@@ -38,10 +52,12 @@ Collaboration diagram for Txt\+Reader\+:\nopagebreak
 
 
 
-Method to compute data as \hyperlink{struct_data}{Data} struct from file. 
+Method to read data from file. 
+
+Takes as input a filename and implements a Ouput\+Data() method returning the data from file
 
 \begin{DoxyReturn}{Returns}
-A \hyperlink{struct_data}{Data} object read from the the file 
+The \hyperlink{struct_data}{Data} struct read from the file 
 \end{DoxyReturn}
 
 

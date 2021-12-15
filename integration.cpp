@@ -17,7 +17,7 @@
 #include "SimpsonsRule.h"
 #include "DataStruct.h"
 
-Eigen::VectorXcd func(double x, double y, Eigen::MatrixXcd coeff) {
+Eigen::VectorXcd func(double x, double y, Eigen::MatrixXcd &coeff) {
     int r = coeff.rows();
     int c = coeff.cols();
 

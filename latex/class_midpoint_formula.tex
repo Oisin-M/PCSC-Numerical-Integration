@@ -2,7 +2,7 @@
 \label{class_midpoint_formula}\index{Midpoint\+Formula@{Midpoint\+Formula}}
 
 
-Class implementing the Midpoint Formula approximation of integrals.  
+Class implementing the Midpoint Formula approximation of integrals in 2D or 1D.  
 
 
 
@@ -31,17 +31,17 @@ Collaboration diagram for Midpoint\+Formula\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_midpoint_formula_ad3c444776b53996d50dbf88a61c36c8c}\label{class_midpoint_formula_ad3c444776b53996d50dbf88a61c36c8c}} 
-{\bfseries Midpoint\+Formula} (\hyperlink{struct_data}{Data} data, Eigen\+::\+Vector\+Xcd($\ast$f)(double x, double y, Eigen\+::\+Matrix\+Xcd coeff))
-\item 
+\hyperlink{class_midpoint_formula_ad3c444776b53996d50dbf88a61c36c8c}{Midpoint\+Formula} (\hyperlink{struct_data}{Data} data, Eigen\+::\+Vector\+Xcd($\ast$f)(double x, double y, Eigen\+::\+Matrix\+Xcd coeff))
+\begin{DoxyCompactList}\small\item\em Initialiser setting the data as a \hyperlink{struct_data}{Data} struct and also the function to integrate. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xcd \hyperlink{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}{Solve} ()
-\begin{DoxyCompactList}\small\item\em Method to compute approximate value of the integral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method to compute approximate value of the 2D or 1D integral with Midpoint Formula. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-Class implementing the Midpoint Formula approximation of integrals. 
+Class implementing the Midpoint Formula approximation of integrals in 2D or 1D. 
 
-Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlink{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}{Solve()} method returning the Midpoint Formula approximation of the integral $(x_1,y_1)$ 
+Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlink{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}{Solve()} method returning the 2D or 1D Midpoint Formula approximation of the integral 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}\label{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}} 
@@ -52,7 +52,9 @@ Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlin
 
 
 
-Method to compute approximate value of the integral. 
+Method to compute approximate value of the 2D or 1D integral with Midpoint Formula. 
+
+Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlink{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}{Solve()} method returning the 2D or 1D Midpoint Formula approximation of the integral \begin{eqnarray*} I &\approx& h_x h_y \left[ \sum_{i=1}^{n_y} \sum_{j=1}^{n_x} f\left(\frac{x_{j-1}+x_j}{2}, \frac{y_{i-1}+y_i}{2}\right) \right] \end{eqnarray*}
 
 \begin{DoxyReturn}{Returns}
 The complex vector result of the integral approximation 

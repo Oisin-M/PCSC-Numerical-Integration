@@ -65,6 +65,11 @@ $(function() {
 <div class="title">SimpsonsRule Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class implementing the Simpson's Rule approximation of integrals in 2D or 1D.  
+ <a href="class_simpsons_rule.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_simpsons_rule_8h_source.html">SimpsonsRule.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SimpsonsRule:</div>
 <div class="dyncontent">
@@ -86,10 +91,11 @@ Collaboration diagram for SimpsonsRule:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af880433d19d6041cdedb081b542a195b"><td class="memItemLeft" align="right" valign="top"><a id="af880433d19d6041cdedb081b542a195b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SimpsonsRule</b> (<a class="el" href="struct_data.html">Data</a> data, Eigen::VectorXcd(*f)(double x, double y, Eigen::MatrixXcd coeff))</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simpsons_rule.html#af880433d19d6041cdedb081b542a195b">SimpsonsRule</a> (<a class="el" href="struct_data.html">Data</a> data, Eigen::VectorXcd(*f)(double x, double y, Eigen::MatrixXcd coeff))</td></tr>
+<tr class="memdesc:af880433d19d6041cdedb081b542a195b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser setting the data as a <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> struct and also the function to integrate. <br /></td></tr>
 <tr class="separator:af880433d19d6041cdedb081b542a195b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9925b07e44be9fc1644d3cbeb742078c"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simpsons_rule.html#a9925b07e44be9fc1644d3cbeb742078c">Solve</a> ()</td></tr>
-<tr class="memdesc:a9925b07e44be9fc1644d3cbeb742078c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to compute approximate value of the integral.  <a href="#a9925b07e44be9fc1644d3cbeb742078c">More...</a><br /></td></tr>
+<tr class="memdesc:a9925b07e44be9fc1644d3cbeb742078c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to compute approximate value of the 2D or 1D integral with Simpson's Rule.  <a href="#a9925b07e44be9fc1644d3cbeb742078c">More...</a><br /></td></tr>
 <tr class="separator:a9925b07e44be9fc1644d3cbeb742078c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_abstract_integration_method"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_abstract_integration_method')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_abstract_integration_method.html">AbstractIntegrationMethod</a></td></tr>
 <tr class="memitem:a2b3a0208c99564d496e27b383fc4d96f inherit pub_methods_class_abstract_integration_method"><td class="memItemLeft" align="right" valign="top"><a id="a2b3a0208c99564d496e27b383fc4d96f"></a>
@@ -107,7 +113,10 @@ Additional Inherited Members</h2></td></tr>
 Eigen::VectorXcd(*&#160;</td><td class="memItemRight" valign="bottom"><b>f</b> )(double x, double y, Eigen::MatrixXcd coeff)</td></tr>
 <tr class="separator:a4de4f7ee55737b4f05f2b02649bf5ea0 inherit pro_attribs_class_abstract_integration_method"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class implementing the Simpson's Rule approximation of integrals in 2D or 1D. </p>
+<p>Takes as input a <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> struct and implements a <a class="el" href="class_simpsons_rule.html#a9925b07e44be9fc1644d3cbeb742078c" title="Method to compute approximate value of the 2D or 1D integral with Simpson&#39;s Rule. ...">Solve()</a> method returning the 2D or 1D Simpson's Rule approximation of the integral </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9925b07e44be9fc1644d3cbeb742078c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9925b07e44be9fc1644d3cbeb742078c">&#9670;&nbsp;</a></span>Solve()</h2>
 
@@ -131,7 +140,10 @@ Eigen::VectorXcd(*&#160;</td><td class="memItemRight" valign="bottom"><b>f</b> )
 </table>
 </div><div class="memdoc">
 
-<p>Method to compute approximate value of the integral. </p>
+<p>Method to compute approximate value of the 2D or 1D integral with Simpson's Rule. </p>
+<p>Takes as input a <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> struct and implements a <a class="el" href="class_simpsons_rule.html#a9925b07e44be9fc1644d3cbeb742078c" title="Method to compute approximate value of the 2D or 1D integral with Simpson&#39;s Rule. ...">Solve()</a> method returning the 2D or 1D Simpson's Rule approximation of the integral </p><p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*} I \approx &amp; \frac{h_x h_y}{36} \left[ f(x_0, y_0)+f(x_0,y_f)+f(x_f,y_0)+f(x_f,y_f) \right.\\ &amp; + 4 \left( \sum_{i=1}^{n_y} \left[f(x_0, y_{2i-1})+f(x_f,y_{2i-1})\right] + \sum_{j=1}^{n_x} \left[f(x_{2j-1}, y_0)+f(x_{2j-1},y_f)\right] \right)\\ &amp; + 2 \left( \sum_{i=1}^{n_y-1} \left[f(x_0, y_{2i})+f(x_f,y_{2i})\right] + \sum_{j=1}^{n_x-1} \left[f(x_{2j}, y_0)+f(x_{2j},y_f)\right] \right) \\ &amp; + 4 \left( \sum_{i=1}^{n_y-1} \sum_{j=1}^{n_x-1} f(x_{2j}, y_{2i}) \right) + 16 \left( \sum_{i=1}^{n_y} \sum_{j=1}^{n_x} f(x_{2j-1}, y_{2i-1}) \right) \\ &amp; \left. +8 \left( \sum_{i=1}^{n_y} \sum_{j=1}^{n_x-1} f(x_{2j}, y_{2i-1}) + \sum_{i=1}^{n_y-1} \sum_{j=1}^{n_x} f(x_{2j-1}, y_{2i}) \right) \right] \end{eqnarray*}" src="form_4.png"/>
+</p>
 <dl class="section return"><dt>Returns</dt><dd>The complex vector result of the integral approximation </dd></dl>
 
 <p>Implements <a class="el" href="class_abstract_integration_method.html#af76e5bdce7d0b139d07e920fa29c1c34">AbstractIntegrationMethod</a>.</p>

@@ -65,6 +65,11 @@ $(function() {
 <div class="title">TxtReader Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class implementing reading data from TXT riles.  
+ <a href="class_txt_reader.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_txt_reader_8h_source.html">TxtReader.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TxtReader:</div>
 <div class="dyncontent">
@@ -85,10 +90,11 @@ Collaboration diagram for TxtReader:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acbef0ef9c6034581d76a3b9e305f1508"><td class="memItemLeft" align="right" valign="top"><a id="acbef0ef9c6034581d76a3b9e305f1508"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TxtReader</b> (std::string filename)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_txt_reader.html#acbef0ef9c6034581d76a3b9e305f1508">TxtReader</a> (std::string filename)</td></tr>
+<tr class="memdesc:acbef0ef9c6034581d76a3b9e305f1508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser setting the filename. <br /></td></tr>
 <tr class="separator:acbef0ef9c6034581d76a3b9e305f1508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30786dcd83c2f24dd26e83cb5fd934ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_txt_reader.html#a30786dcd83c2f24dd26e83cb5fd934ab">OutputData</a> ()</td></tr>
-<tr class="memdesc:a30786dcd83c2f24dd26e83cb5fd934ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to compute data as <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> struct from file.  <a href="#a30786dcd83c2f24dd26e83cb5fd934ab">More...</a><br /></td></tr>
+<tr class="memdesc:a30786dcd83c2f24dd26e83cb5fd934ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to read data from file.  <a href="#a30786dcd83c2f24dd26e83cb5fd934ab">More...</a><br /></td></tr>
 <tr class="separator:a30786dcd83c2f24dd26e83cb5fd934ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_abstract_reader"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_abstract_reader')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_abstract_reader.html">AbstractReader</a></td></tr>
 <tr class="memitem:af7d4391a1d75538c6bb406c00acabd30 inherit pub_methods_class_abstract_reader"><td class="memItemLeft" align="right" valign="top"><a id="af7d4391a1d75538c6bb406c00acabd30"></a>
@@ -103,7 +109,10 @@ Additional Inherited Members</h2></td></tr>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>fname</b></td></tr>
 <tr class="separator:a143f9961ba8aca61c32234a042e466ce inherit pro_attribs_class_abstract_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class implementing reading data from TXT riles. </p>
+<p>Takes as input a filename and returns a <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> struct that can be passed to the integration methods </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a30786dcd83c2f24dd26e83cb5fd934ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a30786dcd83c2f24dd26e83cb5fd934ab">&#9670;&nbsp;</a></span>OutputData()</h2>
 
@@ -127,8 +136,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>fname</b></td>
 </table>
 </div><div class="memdoc">
 
-<p>Method to compute data as <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> struct from file. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> object read from the the file </dd></dl>
+<p>Method to read data from file. </p>
+<p>Takes as input a filename and implements a OuputData() method returning the data from file</p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> struct read from the file </dd></dl>
 
 <p>Implements <a class="el" href="class_abstract_reader.html#a14b05f156920be0cfa0cabdb1c6c1267">AbstractReader</a>.</p>
 

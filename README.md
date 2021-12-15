@@ -1,10 +1,18 @@
 # Project 5 - Numerical Integration
 
+*README is hosted at https://gitlab.epfl.ch/majoor/project-5-numerical-integration*
+
 ### Compiling the Program
 The following steps should be undertaken to run our code
 - clone the repository with `git clone git@gitlab.epfl.ch:majoor/project-5-numerical-integration.git`
 - fetch the submodules (Eigen and Googletest) using `git submodule update --init`
-- build the executable using CMAKE `[to be done]`
+- build the executable using CMAKE 
+```
+mkdir build
+cd build
+cmake ..
+```
+- run the executable `./integration`
 
 This code will produce the following output:
 ```
@@ -14,7 +22,7 @@ This code will produce the following output:
 ### Configuring the Program
 To run the program with different integrals and different domains of integration, the input file can be configured. An example of the format required is shown below:
 
-![alt text](README_Images/file_structure.PNG)
+![image showing file structure](README_Images/file_structure.PNG)
 
 The first line details the length of inputs the program should expect. The lines (a), (b), (c) and (d) are then read as follows:
 - (a) first domain is between x=1 and x=2, y=5 and y=6 and the integration method undergoes 10 steps in the x direction and 11 steps in the y direction

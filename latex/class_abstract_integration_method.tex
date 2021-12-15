@@ -11,8 +11,7 @@ Abstract class for implementation of integration algorithms.
 
 
 
-Inheritance diagram for Abstract\+Integration\+Method\+:
-\nopagebreak
+Inheritance diagram for Abstract\+Integration\+Method\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,7 +34,7 @@ Collaboration diagram for Abstract\+Integration\+Method\+:\nopagebreak
 \hyperlink{class_abstract_integration_method_a2b3a0208c99564d496e27b383fc4d96f}{Abstract\+Integration\+Method} (\hyperlink{struct_data}{Data} data, Eigen\+::\+Vector\+Xcd($\ast$function)(double x, double y, Eigen\+::\+Matrix\+Xcd coeff))
 \begin{DoxyCompactList}\small\item\em Initialiser setting the data as a \hyperlink{struct_data}{Data} struct and also the function to integrate. \end{DoxyCompactList}\item 
 virtual Eigen\+::\+Vector\+Xcd \hyperlink{class_abstract_integration_method_af76e5bdce7d0b139d07e920fa29c1c34}{Solve} ()=0
-\begin{DoxyCompactList}\small\item\em Method to compute approximate value of the integral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method to compute approximate value of the 2D or 1D integral. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -50,7 +49,7 @@ Eigen\+::\+Vector\+Xcd($\ast$ {\bfseries f} )(double x, double y, Eigen\+::\+Mat
 \subsection{Detailed Description}
 Abstract class for implementation of integration algorithms. 
 
-Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlink{class_abstract_integration_method_af76e5bdce7d0b139d07e920fa29c1c34}{Solve()} method returning the approximation of the integral 
+Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlink{class_abstract_integration_method_af76e5bdce7d0b139d07e920fa29c1c34}{Solve()} method returning the approximation of the 2D or 1D integral 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_abstract_integration_method_af76e5bdce7d0b139d07e920fa29c1c34}\label{class_abstract_integration_method_af76e5bdce7d0b139d07e920fa29c1c34}} 
@@ -61,14 +60,14 @@ Takes as input a \hyperlink{struct_data}{Data} struct and implements a \hyperlin
 
 
 
-Method to compute approximate value of the integral. 
+Method to compute approximate value of the 2D or 1D integral. 
 
 \begin{DoxyReturn}{Returns}
 The complex vector result of the integral approximation 
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}{Midpoint\+Formula}, \hyperlink{class_simpsons_rule_a9925b07e44be9fc1644d3cbeb742078c}{Simpsons\+Rule}, and \hyperlink{class_trapezoidal_rule_ae822d86948bdc8876bf524cd620e11b8}{Trapezoidal\+Rule}.
+Implemented in \hyperlink{class_simpsons_rule_a9925b07e44be9fc1644d3cbeb742078c}{Simpsons\+Rule}, \hyperlink{class_trapezoidal_rule_ae822d86948bdc8876bf524cd620e11b8}{Trapezoidal\+Rule}, and \hyperlink{class_midpoint_formula_add437323dfb0bc181b0051c5aaf80ba7}{Midpoint\+Formula}.
 
 
 
