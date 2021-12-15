@@ -11,18 +11,18 @@
 * Takes as input a filename and outputs a Data struct
 * \brief Abstract class for implementation of file reading
 */
-
 class AbstractReader {
 public:
-    /** \brief Initialiser setting filename
-    */
+/** \brief Initialiser setting filename
+*/
     AbstractReader(std::string filename);
-    /** \brief Method to compute data as Data struct  from file
- */
+/** \brief Method to compute data as Data struct  from file
+*/
 /*!
 \return A Data object read from the the file
 */
     virtual Data OutputData()=0;
+
 protected:
     std::string fname;
 };
