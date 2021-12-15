@@ -13,8 +13,6 @@
 
 TEST(sqrt, integer) { EXPECT_EQ(2, std::sqrt(4)); }
 
-TEST(google_test, x_positive_y_positive) { EXPECT_EQ(5, test_function(2,1));}
-
 TEST(reader, first_test) { ASSERT_DEATH (auto data = TxtReader("../tests/readfile_fail_D.txt").OutputData(), "Assertion `D>0' failed");}
 
 TEST(integration, first_test) {
