@@ -8,10 +8,31 @@
 #include "../test_googletest.h"
 #include "../TxtReader.cpp"
 #include "../MidpointFormula.h"
+#include "../TrapezoidalRule.h"
+#include "../SimpsonsRule.h"
 #include "../DataStruct.h"
 #include "../AbstractIntegrationMethod.h"
 
-TEST(sqrt, integer) { EXPECT_EQ(2, std::sqrt(4)); }
+
+Eigen::VectorXcd func(double x, double y, Eigen::MatrixXcd coeff) {
+    int r = coeff.rows();
+    int c = coeff.cols();
+
+    Eigen::VectorXd XandY (c);
+    XandY(0) = 1;
+    for (int i = 0; i < c - 1; i++){
+        int power = ceil((i + 0.5) / 2); // gives 1, 1, 2, 2, 3, 3, ...
+        if (i % 2 == 0){
+            XandY(i + 1) = pow(x, power);
+        }
+        else {
+            XandY(i + 1) = pow(y, power);
+        }
+    }
+    Eigen::VectorXcd output (r);
+    output = coeff * XandY;
+    return output;
+}
 
 TEST(reader, first_test) { ASSERT_DEATH (auto data = TxtReader("../tests/readfile_fail_D.txt").OutputData(), "Assertion `D>0' failed");}
 
@@ -75,3 +96,58 @@ TEST(integration, second_test){
     testSteps(1,1) = 10;
     EXPECT_EQ(data.noSteps, testSteps);
 }
+
+TEST(midpoint, integrate){
+    std::string filename = "../tests/midpt_readfile.txt";
+    TxtReader reader = TxtReader(filename);
+    Data data = reader.OutputData();
+    MidpointFormula midpt = MidpointFormula(data, &func);
+    auto midpt_out = midpt.Solve();
+    std::cout << data.coefficients << std::endl << std::endl << std::endl;
+    std::cout << midpt_out << std::endl;
+}
+
+TEST(integrate, constant){
+    std::string filename = "../tests/int_constant.txt";
+    TxtReader reader = TxtReader(filename);
+    Data data = reader.OutputData();
+    auto mid_out = MidpointFormula(data, &func).Solve();
+    auto trap_out = TrapezoidalRule(data, &func).Solve();
+    auto simp_out = SimpsonsRule(data, &func).Solve();
+
+    Eigen::VectorXcd expected (2);
+    expected(0) = std::complex<double>(2,4);
+    expected(1) = std::complex<double>(-2,8);
+
+    EXPECT_FLOAT_EQ(std::norm(expected(0)), std::norm(mid_out(0)));
+    EXPECT_FLOAT_EQ(std::norm(expected(1)), std::norm(mid_out(1)));
+
+    EXPECT_FLOAT_EQ(std::norm(expected(0)), std::norm(trap_out(0)));
+    EXPECT_FLOAT_EQ(std::norm(expected(1)), std::norm(trap_out(1)));
+
+    EXPECT_FLOAT_EQ(std::norm(expected(0)), std::norm(simp_out(0)));
+    EXPECT_FLOAT_EQ(std::norm(expected(1)), std::norm(simp_out(1)));
+}
+
+TEST(integrate, rank3) {
+    std::string filename = "../tests/int_rank3.txt";
+    TxtReader reader = TxtReader(filename);
+    Data data = reader.OutputData();
+    auto mid_out = MidpointFormula(data, &func).Solve();
+    auto trap_out = TrapezoidalRule(data, &func).Solve();
+    auto simp_out = SimpsonsRule(data, &func).Solve();
+
+    Eigen::VectorXcd expected (2);
+    expected(0) = std::complex<double>(60,-32);
+    expected(1) = std::complex<double>(28,-50);
+
+    EXPECT_FLOAT_EQ(std::norm(expected(0)), std::norm(mid_out(0)));
+    EXPECT_FLOAT_EQ(std::norm(expected(1)), std::norm(mid_out(1)));
+
+    EXPECT_FLOAT_EQ(std::norm(expected(0)), std::norm(simp_out(0)));
+    EXPECT_FLOAT_EQ(std::norm(expected(1)), std::norm(simp_out(1)));
+
+    EXPECT_TRUE(std::real(expected(0)) <= std::real(trap_out(0))+0.1 && std::real(expected(0)) >= std::real(trap_out(0))-0.1);
+    EXPECT_TRUE(std::imag(expected(0)) <= std::imag(trap_out(0))+0.1 && std::imag(expected(0)) >= std::imag(trap_out(0))-0.1);
+    EXPECT_TRUE(std::real(expected(1)) <= std::real(trap_out(1))+0.1 && std::real(expected(1)) >= std::real(trap_out(1))-0.1);
+    EXPECT_TRUE(std::imag(expected(1)) <= std::imag(trap_out(1))+0.1 && std::imag(expected(1)) >= std::imag(trap_out(1))-0.1);}
