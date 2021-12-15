@@ -38,4 +38,4 @@ Eigen::VectorXcd MidpointFormula::Solve() {
     return final_vec;
 }
 
-MidpointFormula::MidpointFormula(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd coeff)) : AbstractIntegrationMethod(data, f) {}
+MidpointFormula::MidpointFormula(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd &coeff)) : AbstractIntegrationMethod(data, f) {}

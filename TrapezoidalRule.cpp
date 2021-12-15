@@ -45,4 +45,4 @@ Eigen::VectorXcd TrapezoidalRule::Solve() {
     return final_vec;
 }
 
-TrapezoidalRule::TrapezoidalRule(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd coeff)) : AbstractIntegrationMethod(data, f) {}
+TrapezoidalRule::TrapezoidalRule(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd &coeff)) : AbstractIntegrationMethod(data, f) {}
