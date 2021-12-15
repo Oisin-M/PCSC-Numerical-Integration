@@ -9,7 +9,7 @@ include_directories(eigen)
 
 add_executable(integration integration.cpp AbstractReader.cpp TxtReader.cpp AbstractIntegrationMethod.cpp MidpointFormula.cpp TrapezoidalRule.cpp SimpsonsRule.cpp)
 
-add_executable(Tests tests/Tests.cpp test_googletest.cpp)
+add_executable(Tests tests/Tests.cpp test_googletest.cpp AbstractReader.cpp MidpointFormula.cpp AbstractIntegrationMethod.cpp)
 target_link_libraries(Tests gtest_main gtest)
 
 

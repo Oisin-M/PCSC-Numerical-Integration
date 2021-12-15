@@ -48,7 +48,8 @@ int main() {
     std::cout << "m: " << data.m << std::endl;
     std::cout << "boundsX: " << std::endl << data.boundsX << std::endl;
     std::cout << "boundsY: " << std::endl << data.boundsY << std::endl;
-    std::cout << "noSteps: " << std::endl << data.noSteps << std::endl << std::endl;
+    std::cout << "noSteps: " << std::endl << data.noSteps << std::endl;
+    std::cout << "coefficients: " << std::endl << data.coefficients << std::endl << std::endl;
 
     std::cout << "---Integration Methods---" <<std::endl;
     std::cout << "MidpointFormula:" << std::endl;
