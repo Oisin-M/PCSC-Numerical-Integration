@@ -63,4 +63,4 @@ Eigen::VectorXcd SimpsonsRule::Solve() {
     return final_vec;
 }
 
-SimpsonsRule::SimpsonsRule(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd &coeff)) : AbstractIntegrationMethod(data, f) {}
+SimpsonsRule::SimpsonsRule(Data &data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd &coeff)) : AbstractIntegrationMethod(data, f) {}

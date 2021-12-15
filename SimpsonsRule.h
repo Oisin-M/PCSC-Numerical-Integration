@@ -17,7 +17,7 @@ class SimpsonsRule : public AbstractIntegrationMethod {
 public:
 /** \brief Initialiser setting the data as a Data struct and also the function to integrate
 */
-    SimpsonsRule(Data data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd &coeff));
+    SimpsonsRule(Data &data, Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd &coeff));
     /** \brief Method to compute approximate value of the 2D or 1D integral with Simpson's Rule
  */
     /**
