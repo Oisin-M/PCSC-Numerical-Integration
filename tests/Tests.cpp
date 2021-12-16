@@ -34,14 +34,17 @@ Eigen::VectorXcd func(double x, double y, Eigen::MatrixXcd &coeff) {
 }
 
 TEST(reader, death_tests) {
+    std::cout << std::endl << "---------- READER TESTS ----------" << std::endl << std::endl;
     ASSERT_DEATH (auto data = TxtReader("../tests/non_existing_file.txt").OutputData(), "Failed to open");
     ASSERT_DEATH (auto data = TxtReader("../tests/readfile_fail_D.txt").OutputData(), "Assertion `D>0' failed");
     ASSERT_DEATH (auto data = TxtReader("../tests/readfile_fail_m.txt").OutputData(), "Assertion `m>0' failed");
     ASSERT_DEATH (auto data = TxtReader("../tests/readfile_fail_l.txt").OutputData(), "Assertion `l>0' failed");
+
 }
 
 
 TEST(integrate, constant){
+    std::cout << "---------- INTEGRATION TESTS ----------" << std::endl << std::endl;
     std::string filename = "../tests/int_constant.txt";
     TxtReader reader = TxtReader(filename);
     Data data = reader.OutputData();
@@ -126,9 +129,6 @@ TEST(integrate, rank9) {
     double imag = -464.0/60.0;
     expected(0) = std::complex<double>(real,imag);
 
-    std::cout << std::real(expected(0)) << std::endl;
-    std::cout << std::real(mid_out(0)) << std::endl;
-
     EXPECT_TRUE(std::real(expected(0)) <= std::real(mid_out(0))+0.1 && std::real(expected(0)) >= std::real(mid_out(0))-0.1);
     EXPECT_TRUE(std::imag(expected(0)) <= std::imag(mid_out(0))+0.1 && std::imag(expected(0)) >= std::imag(mid_out(0))-0.1);
 
@@ -138,4 +138,5 @@ TEST(integrate, rank9) {
     EXPECT_TRUE(std::real(expected(0)) <= std::real(trap_out(0))+0.1 && std::real(expected(0)) >= std::real(trap_out(0))-0.1);
     EXPECT_TRUE(std::imag(expected(0)) <= std::imag(trap_out(0))+0.1 && std::imag(expected(0)) >= std::imag(trap_out(0))-0.1);
 
+    std::cout << std::endl << "---------- END OF TESTS ----------" << std::endl << std::endl;
 }
