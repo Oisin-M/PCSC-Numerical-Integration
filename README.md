@@ -95,6 +95,12 @@ xdg-open html/index.html
 ```
 
 ### Tests
+To execute tests, it suffices to run
+```
+./Tests
+```
+from the `build/` directory.
+
 Two types of test are run using googletest :
 - Tests of the text file reader
 - Tests of the integration methods
