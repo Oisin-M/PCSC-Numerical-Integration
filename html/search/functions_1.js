@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['midpointformula',['MidpointFormula',['../class_midpoint_formula.html#ad3c444776b53996d50dbf88a61c36c8c',1,'MidpointFormula']]]
+  ['midpointformula',['MidpointFormula',['../class_midpoint_formula.html#a6217c8547e15ad68ab99f4ab4d8f9f3c',1,'MidpointFormula']]]
 ];

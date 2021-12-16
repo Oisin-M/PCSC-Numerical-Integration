@@ -92,10 +92,10 @@ Collaboration diagram for AbstractIntegrationMethod:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2b3a0208c99564d496e27b383fc4d96f"><td class="memItemLeft" align="right" valign="top"><a id="a2b3a0208c99564d496e27b383fc4d96f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_integration_method.html#a2b3a0208c99564d496e27b383fc4d96f">AbstractIntegrationMethod</a> (<a class="el" href="struct_data.html">Data</a> data, Eigen::VectorXcd(*function)(double x, double y, Eigen::MatrixXcd coeff))</td></tr>
-<tr class="memdesc:a2b3a0208c99564d496e27b383fc4d96f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser setting the data as a <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> struct and also the function to integrate. <br /></td></tr>
-<tr class="separator:a2b3a0208c99564d496e27b383fc4d96f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9094172e42a206908a2724cb25159c0"><td class="memItemLeft" align="right" valign="top"><a id="ac9094172e42a206908a2724cb25159c0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_integration_method.html#ac9094172e42a206908a2724cb25159c0">AbstractIntegrationMethod</a> (<a class="el" href="struct_data.html">Data</a> &amp;data, Eigen::VectorXcd(*function)(double x, double y, Eigen::MatrixXcd &amp;coeff))</td></tr>
+<tr class="memdesc:ac9094172e42a206908a2724cb25159c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser setting the data as a <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> struct and also the function to integrate. <br /></td></tr>
+<tr class="separator:ac9094172e42a206908a2724cb25159c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af76e5bdce7d0b139d07e920fa29c1c34"><td class="memItemLeft" align="right" valign="top">virtual Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_integration_method.html#af76e5bdce7d0b139d07e920fa29c1c34">Solve</a> ()=0</td></tr>
 <tr class="memdesc:af76e5bdce7d0b139d07e920fa29c1c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to compute approximate value of the 2D or 1D integral.  <a href="#af76e5bdce7d0b139d07e920fa29c1c34">More...</a><br /></td></tr>
 <tr class="separator:af76e5bdce7d0b139d07e920fa29c1c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,9 +105,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a534b5ff7dfbccc1332cfbe66e817b389"><td class="memItemLeft" align="right" valign="top"><a id="a534b5ff7dfbccc1332cfbe66e817b389"></a>
 <a class="el" href="struct_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
 <tr class="separator:a534b5ff7dfbccc1332cfbe66e817b389"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4de4f7ee55737b4f05f2b02649bf5ea0"><td class="memItemLeft" align="right" valign="top"><a id="a4de4f7ee55737b4f05f2b02649bf5ea0"></a>
-Eigen::VectorXcd(*&#160;</td><td class="memItemRight" valign="bottom"><b>f</b> )(double x, double y, Eigen::MatrixXcd coeff)</td></tr>
-<tr class="separator:a4de4f7ee55737b4f05f2b02649bf5ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af94033e3acb2f881e9973480809e2e2f"><td class="memItemLeft" align="right" valign="top"><a id="af94033e3acb2f881e9973480809e2e2f"></a>
+Eigen::VectorXcd(*&#160;</td><td class="memItemRight" valign="bottom"><b>f</b> )(double x, double y, Eigen::MatrixXcd &amp;coeff)</td></tr>
+<tr class="separator:af94033e3acb2f881e9973480809e2e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class for implementation of integration algorithms. </p>
