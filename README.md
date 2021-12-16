@@ -21,6 +21,7 @@ git submodule update --init
 mkdir build
 cd build
 cmake ..
+make
 ```
 - run the executable 
 ```
@@ -62,8 +63,6 @@ SimpsonsRule:
 [ 199.833 + 388.125i,
 125 + -3.75i ]
 
-
-Process finished with exit code 0
 ```
 
 ### Configuring the Program
