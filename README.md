@@ -37,4 +37,14 @@ The first line details the length of inputs the program should expect. The lines
 [to be done]
 
 ### Tests
-[to be done]
+Two types of test are run using googletest :
+- Tests of the text file reader
+- Tests of the integration methods
+
+For the reader, we execute a few death tests to ensure that the first inputs are asserted to be positive.
+
+For the integration, we run tests on polynomials of 4 values of l (l is defined above).
+- For l=1, we integrate a constant function and expect an exact solution for all 3 methods.
+- For l=3, we expect an exact solution for midpoint and Simpson but an approximate solution for trapezoidal.
+- For l=6, we expect an exact solution for Simpson but an approximate solution for midpoint and trapezoidal.
+- For l=9, we expect an approximate solution for all 3 methods.
