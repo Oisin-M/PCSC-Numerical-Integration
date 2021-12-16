@@ -4,20 +4,35 @@
 
 ### Compiling the Program
 The following steps should be undertaken to run our code
-- clone the repository with `git clone git@gitlab.epfl.ch:majoor/project-5-numerical-integration.git`
-- fetch the submodules (Eigen and Googletest) using `git submodule update --init`
+- clone the repository with 
+```
+git clone git@gitlab.epfl.ch:majoor/project-5-numerical-integration.git
+```
+- move to the cloned directory
+```
+cd project-5-numerical-integration/
+```
+- fetch the submodules (Eigen and Googletest) using 
+```
+git submodule update --init
+```
 - build the executable using CMAKE 
 ```
 mkdir build
 cd build
 cmake ..
 ```
-- run the executable `./integration`
+- run the executable 
+```
+./integration
+```
 
 This code will produce the following output:
 ```
 Successfully opened file ../readfile.txt
+
 ---Input Data---
+
 D: 2
 m: 2
 boundsX: 
@@ -36,16 +51,17 @@ coefficients:
 ---Integration Methods---
 
 MidpointFormula:
-199.819 + 388.072i
-125 + -3.75i
+[ 199.819 + 388.072i,
+125 + -3.75i ]
 
 TrapezoidalRule:
-202.09 + 390.886i
-125.909 + -3.65909i
+[ 202.09 + 390.886i,
+125.909 + -3.65909i ]
 
 SimpsonsRule:
-199.833 + 388.125i
-125 + -3.75i
+[ 199.833 + 388.125i,
+125 + -3.75i ]
+
 
 Process finished with exit code 0
 ```
@@ -62,8 +78,8 @@ The first line details the length of inputs the program should expect. The lines
 - (d) second function output reads 5-6i + (19+1i)x + (0+0i)y + (0+0i)x^2
 
 ### Typical Program Usage
-A typical execution would be to edit the configuration to a new integration problem, and then to simply rerun the program
-with `./integration`
+A typical execution would be to edit the configuration file `readfile.txt` to indicate a new integration problem, and then to simply rerun the program
+with `./integration` and view the results of the methods.
 
 ### Program Features
 - Reads arbitrary input from file
@@ -94,8 +110,7 @@ For the integration, we run tests on polynomials of 4 values of l (l is defined 
 
 ### Current Issues/Limitations
 - Limited error handling
-- Wasteful to have Eigen::VectorXcd (*f)(double x, double y,
-- Eigen::MatrixXcd &coeff) take &coeff as input
+- Wasteful to have `Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd &coeff)` take `&coeff` as input
 - No specifiers const and unsigned where appropriate
 - No use of override
 

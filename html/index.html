@@ -65,12 +65,13 @@ $(function() {
 <div class="textblock"><p><em>README is located at <a href="https://gitlab.epfl.ch/majoor/project-5-numerical-integration">https://gitlab.epfl.ch/majoor/project-5-numerical-integration</a>. If images fail to load, view the README online.</em></p>
 <h3>Compiling the Program</h3>
 <p>The following steps should be undertaken to run our code</p><ul>
-<li>clone the repository with <code>git clone git@gitlab.epfl.ch:majoor/project-5-numerical-integration.git</code></li>
-<li>fetch the submodules (Eigen and Googletest) using <code>git submodule update --init</code></li>
+<li>clone the repository with <div class="fragment"><div class="line">git clone git@gitlab.epfl.ch:majoor/project-5-numerical-integration.git</div></div><!-- fragment --></li>
+<li>move to the cloned directory <div class="fragment"><div class="line">cd project-5-numerical-integration/</div></div><!-- fragment --></li>
+<li>fetch the submodules (Eigen and Googletest) using <div class="fragment"><div class="line">git submodule update --init</div></div><!-- fragment --></li>
 <li>build the executable using CMAKE <div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake ..</div></div><!-- fragment --></li>
-<li>run the executable <code>./integration</code></li>
+<li>run the executable <div class="fragment"><div class="line">./integration</div></div><!-- fragment --></li>
 </ul>
-<p>This code will produce the following output: </p><div class="fragment"><div class="line">Successfully opened file ../readfile.txt</div><div class="line">---Input Data---</div><div class="line">D: 2</div><div class="line">m: 2</div><div class="line">boundsX: </div><div class="line">1 2</div><div class="line">6 7</div><div class="line">boundsY: </div><div class="line">  5   6</div><div class="line">  8 9.5</div><div class="line">noSteps: </div><div class="line">10 11</div><div class="line"> 3 10</div><div class="line">coefficients: </div><div class="line">  (1,1) (15,-5) (-2,11) (1,3.6)</div><div class="line"> (5,-6)  (10,1)   (0,0)   (0,0)</div><div class="line"></div><div class="line">---Integration Methods---</div><div class="line"></div><div class="line">MidpointFormula:</div><div class="line">199.819 + 388.072i</div><div class="line">125 + -3.75i</div><div class="line"></div><div class="line">TrapezoidalRule:</div><div class="line">202.09 + 390.886i</div><div class="line">125.909 + -3.65909i</div><div class="line"></div><div class="line">SimpsonsRule:</div><div class="line">199.833 + 388.125i</div><div class="line">125 + -3.75i</div><div class="line"></div><div class="line">Process finished with exit code 0</div></div><!-- fragment --><h3>Configuring the Program</h3>
+<p>This code will produce the following output: </p><div class="fragment"><div class="line">Successfully opened file ../readfile.txt</div><div class="line"></div><div class="line">---Input Data---</div><div class="line"></div><div class="line">D: 2</div><div class="line">m: 2</div><div class="line">boundsX: </div><div class="line">1 2</div><div class="line">6 7</div><div class="line">boundsY: </div><div class="line">  5   6</div><div class="line">  8 9.5</div><div class="line">noSteps: </div><div class="line">10 11</div><div class="line"> 3 10</div><div class="line">coefficients: </div><div class="line">  (1,1) (15,-5) (-2,11) (1,3.6)</div><div class="line"> (5,-6)  (10,1)   (0,0)   (0,0)</div><div class="line"></div><div class="line">---Integration Methods---</div><div class="line"></div><div class="line">MidpointFormula:</div><div class="line">[ 199.819 + 388.072i,</div><div class="line">125 + -3.75i ]</div><div class="line"></div><div class="line">TrapezoidalRule:</div><div class="line">[ 202.09 + 390.886i,</div><div class="line">125.909 + -3.65909i ]</div><div class="line"></div><div class="line">SimpsonsRule:</div><div class="line">[ 199.833 + 388.125i,</div><div class="line">125 + -3.75i ]</div><div class="line"></div><div class="line"></div><div class="line">Process finished with exit code 0</div></div><!-- fragment --><h3>Configuring the Program</h3>
 <p>To run the program with different integrals and different domains of integration, the input file <code>readfile.txt</code> can be configured. An example of the format required is shown below:</p>
 <div class="image">
 <img src="README_Images/file_structure.PNG" alt="image showing file structure"/>
@@ -82,7 +83,7 @@ $(function() {
 <li>(d) second function output reads 5-6i + (19+1i)x + (0+0i)y + (0+0i)x^2</li>
 </ul>
 <h3>Typical Program Usage</h3>
-<p>A typical execution would be to edit the configuration to a new integration problem, and then to simply rerun the program with <code>./integration</code></p>
+<p>A typical execution would be to edit the configuration file <code>readfile.txt</code> to indicate a new integration problem, and then to simply rerun the program with <code>./integration</code> and view the results of the methods.</p>
 <h3>Program Features</h3>
 <ul>
 <li>Reads arbitrary input from file</li>
@@ -108,8 +109,7 @@ $(function() {
 <h3>Current Issues/Limitations</h3>
 <ul>
 <li>Limited error handling</li>
-<li>Wasteful to have Eigen::VectorXcd (*f)(double x, double y,</li>
-<li>Eigen::MatrixXcd &amp;coeff) take &amp;coeff as input</li>
+<li>Wasteful to have <code>Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd &amp;coeff)</code> take <code>&amp;coeff</code> as input</li>
 <li>No specifiers const and unsigned where appropriate</li>
 <li>No use of override</li>
 </ul>

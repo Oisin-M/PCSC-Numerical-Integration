@@ -4,8 +4,21 @@
 
 The following steps should be undertaken to run our code
 \begin{DoxyItemize}
-\item clone the repository with {\ttfamily git clone git@gitlab.\+epfl.\+ch\+:majoor/project-\/5-\/numerical-\/integration.\+git}
-\item fetch the submodules (Eigen and Googletest) using {\ttfamily git submodule update -\/-\/init}
+\item clone the repository with 
+\begin{DoxyCode}
+git clone git@gitlab.epfl.ch:majoor/project-5-numerical-integration.git
+\end{DoxyCode}
+
+\item move to the cloned directory 
+\begin{DoxyCode}
+cd project-5-numerical-integration/
+\end{DoxyCode}
+
+\item fetch the submodules (Eigen and Googletest) using 
+\begin{DoxyCode}
+git submodule update --init
+\end{DoxyCode}
+
 \item build the executable using C\+M\+A\+KE 
 \begin{DoxyCode}
 mkdir build
@@ -13,13 +26,19 @@ cd build
 cmake ..
 \end{DoxyCode}
 
-\item run the executable {\ttfamily ./integration}
+\item run the executable 
+\begin{DoxyCode}
+./integration
+\end{DoxyCode}
+
 \end{DoxyItemize}
 
 This code will produce the following output\+: 
 \begin{DoxyCode}
 Successfully opened file ../readfile.txt
+
 ---Input Data---
+
 D: 2
 m: 2
 boundsX: 
@@ -38,16 +57,17 @@ coefficients:
 ---Integration Methods---
 
 MidpointFormula:
-199.819 + 388.072i
-125 + -3.75i
+[ 199.819 + 388.072i,
+125 + -3.75i ]
 
 TrapezoidalRule:
-202.09 + 390.886i
-125.909 + -3.65909i
+[ 202.09 + 390.886i,
+125.909 + -3.65909i ]
 
 SimpsonsRule:
-199.833 + 388.125i
-125 + -3.75i
+[ 199.833 + 388.125i,
+125 + -3.75i ]
+
 
 Process finished with exit code 0
 \end{DoxyCode}
@@ -69,7 +89,7 @@ The first line details the length of inputs the program should expect. The lines
 
 \subsubsection*{Typical Program Usage}
 
-A typical execution would be to edit the configuration to a new integration problem, and then to simply rerun the program with {\ttfamily ./integration}
+A typical execution would be to edit the configuration file {\ttfamily readfile.\+txt} to indicate a new integration problem, and then to simply rerun the program with {\ttfamily ./integration} and view the results of the methods.
 
 \subsubsection*{Program Features}
 
@@ -114,8 +134,7 @@ For the integration, we run tests on polynomials of 4 values of l (l is defined 
 
 \begin{DoxyItemize}
 \item Limited error handling
-\item Wasteful to have Eigen\+::\+Vector\+Xcd ($\ast$f)(double x, double y,
-\item Eigen\+::\+Matrix\+Xcd \&coeff) take \&coeff as input
+\item Wasteful to have {\ttfamily Eigen\+::\+Vector\+Xcd ($\ast$f)(double x, double y, Eigen\+::\+Matrix\+Xcd \&coeff)} take {\ttfamily \&coeff} as input
 \item No specifiers const and unsigned where appropriate
 \item No use of override
 \end{DoxyItemize}
