@@ -51,21 +51,27 @@ int main() {
     std::cout << "noSteps: " << std::endl << data.noSteps << std::endl;
     std::cout << "coefficients: " << std::endl << data.coefficients << std::endl << std::endl;
 
-    std::cout << "---Integration Methods---" <<std::endl;
+    std::cout << "---Integration Methods---" <<std::endl << std::endl;
     std::cout << "MidpointFormula:" << std::endl;
 
     MidpointFormula midpt = MidpointFormula(data, &func);
-    std::cout << midpt.Solve() << std::endl;
+    auto result_mid = midpt.Solve();
+    std::cout << std::real(result_mid(0)) << " + " << std::imag(result_mid(0)) << "i" << std::endl;
+    std::cout << std::real(result_mid(1)) << " + " << std::imag(result_mid(1)) << "i" << std::endl << std::endl;
 
     std::cout << "TrapezoidalRule:" << std::endl;
 
     TrapezoidalRule trapz = TrapezoidalRule(data, &func);
-    std::cout << trapz.Solve() << std::endl;
+    auto result_trapz = trapz.Solve();
+    std::cout << std::real(result_trapz(0)) << " + " << std::imag(result_trapz(0)) << "i" << std::endl;
+    std::cout << std::real(result_trapz(1)) << " + " << std::imag(result_trapz(1)) << "i" << std::endl << std::endl;
 
     std::cout << "SimpsonsRule:" << std::endl;
 
     SimpsonsRule simps = SimpsonsRule(data, &func);
-    std::cout << simps.Solve() << std::endl;
+    auto result_simps = simps.Solve();
+    std::cout << std::real(result_simps(0)) << " + " << std::imag(result_simps(0)) << "i" << std::endl;
+    std::cout << std::real(result_simps(1)) << " + " << std::imag(result_simps(1)) << "i" << std::endl;
 
     return 0;
 }
