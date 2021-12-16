@@ -33,78 +33,13 @@ Eigen::VectorXcd func(double x, double y, Eigen::MatrixXcd &coeff) {
     return output;
 }
 
-TEST(reader, first_test) { ASSERT_DEATH (auto data = TxtReader("../tests/readfile_fail_D.txt").OutputData(), "Assertion `D>0' failed");}
-
-TEST(integration, first_test) {
-    Eigen::MatrixX2d boundsX(2,2); //X rows, 2 columns and doubles
-    Eigen::MatrixX2d boundsY(2,2); //X rows, 2 columns and doubles
-    Eigen::MatrixX2i noSteps(2,2); //X rows, 2 columns and ints
-    Eigen::MatrixXcd coefficients(2,3); //X rows, 2 columns and ints
-    boundsX(0,0) = 1;
-    boundsX(0,1) = 2;
-    boundsX(1,0) = 6;
-    boundsX(1,1) = 7;
-    boundsY(0,0) = 5;
-    boundsY(0,1) = 6;
-    boundsY(1,0) = 8;
-    boundsY(1,1) = 9.5;
-    noSteps(0,0) = 10;
-    noSteps(0,1) = 10;
-    noSteps(1,0) = 10;
-    noSteps(1,1) = 10;
-    coefficients(0,0) = std::complex<double>(1,1);
-    coefficients(0,1) = std::complex<double>(15,-5);
-    coefficients(0,2) = std::complex<double>(-2,11);
-    coefficients(1,0) = std::complex<double>(5,-6);
-    coefficients(1,1) = std::complex<double>(10,1);
-    coefficients(1,2) = std::complex<double>(0,0);
-    Data data = {.boundsX = boundsX, .boundsY = boundsY, .noSteps = noSteps, .coefficients=coefficients, .D=2, .m=2};
-    EXPECT_EQ(data.D, 2);
-    EXPECT_EQ(data.m, 2);
-
+TEST(reader, death_tests) {
+    ASSERT_DEATH (auto data = TxtReader("../tests/non_existing_file.txt").OutputData(), "Failed to open");
+    ASSERT_DEATH (auto data = TxtReader("../tests/readfile_fail_D.txt").OutputData(), "Assertion `D>0' failed");
+    ASSERT_DEATH (auto data = TxtReader("../tests/readfile_fail_m.txt").OutputData(), "Assertion `m>0' failed");
+    ASSERT_DEATH (auto data = TxtReader("../tests/readfile_fail_l.txt").OutputData(), "Assertion `l>0' failed");
 }
 
-TEST(integration, second_test){
-    Eigen::MatrixX2d boundsX(2,2); //X rows, 2 columns and doubles
-    Eigen::MatrixX2d boundsY(2,2); //X rows, 2 columns and doubles
-    Eigen::MatrixX2i noSteps(2,2); //X rows, 2 columns and ints
-    Eigen::MatrixXcd coefficients(2,3); //X rows, 2 columns and ints
-    boundsX(0,0) = 1;
-    boundsX(0,1) = 2;
-    boundsX(1,0) = 6;
-    boundsX(1,1) = 7;
-    boundsY(0,0) = 5;
-    boundsY(0,1) = 6;
-    boundsY(1,0) = 8;
-    boundsY(1,1) = 9.5;
-    noSteps(0,0) = 10;
-    noSteps(0,1) = 10;
-    noSteps(1,0) = 10;
-    noSteps(1,1) = 10;
-    coefficients(0,0) = std::complex<double>(1,1);
-    coefficients(0,1) = std::complex<double>(15,-5);
-    coefficients(0,2) = std::complex<double>(-2,11);
-    coefficients(1,0) = std::complex<double>(5,-6);
-    coefficients(1,1) = std::complex<double>(10,1);
-    coefficients(1,2) = std::complex<double>(0,0);
-    Data data = {.boundsX = boundsX, .boundsY = boundsY, .noSteps = noSteps, .coefficients=coefficients, .D=2, .m=2};
-    Eigen::MatrixX2i testSteps(2,2);
-    testSteps(0,0) = 10;
-    testSteps(0,1) = 10;
-    testSteps(1,0) = 10;
-    testSteps(1,1) = 10;
-    EXPECT_EQ(data.noSteps, testSteps);
-}
-
-TEST(midpoint, integrate){
-    std::string filename = "../tests/midpt_readfile.txt";
-    TxtReader reader = TxtReader(filename);
-    Data data = reader.OutputData();
-    MidpointFormula midpt = MidpointFormula(data, &func);
-    auto midpt_out = midpt.Solve();
-    std::cout << data.coefficients << std::endl << std::endl << std::endl;
-    std::cout << midpt_out << std::endl;
-}
 
 TEST(integrate, constant){
     std::string filename = "../tests/int_constant.txt";
@@ -149,4 +84,58 @@ TEST(integrate, rank3) {
     EXPECT_TRUE(std::real(expected(0)) <= std::real(trap_out(0))+0.1 && std::real(expected(0)) >= std::real(trap_out(0))-0.1);
     EXPECT_TRUE(std::imag(expected(0)) <= std::imag(trap_out(0))+0.1 && std::imag(expected(0)) >= std::imag(trap_out(0))-0.1);
     EXPECT_TRUE(std::real(expected(1)) <= std::real(trap_out(1))+0.1 && std::real(expected(1)) >= std::real(trap_out(1))-0.1);
-    EXPECT_TRUE(std::imag(expected(1)) <= std::imag(trap_out(1))+0.1 && std::imag(expected(1)) >= std::imag(trap_out(1))-0.1);}
+    EXPECT_TRUE(std::imag(expected(1)) <= std::imag(trap_out(1))+0.1 && std::imag(expected(1)) >= std::imag(trap_out(1))-0.1);
+}
+
+TEST(integrate, rank6) {
+    std::string filename = "../tests/int_rank6.txt";
+    TxtReader reader = TxtReader(filename);
+    Data data = reader.OutputData();
+    auto mid_out = MidpointFormula(data, &func).Solve();
+    auto trap_out = TrapezoidalRule(data, &func).Solve();
+    auto simp_out = SimpsonsRule(data, &func).Solve();
+
+    Eigen::VectorXcd expected (2);
+    expected(0) = std::complex<double>(7.75,7.75);
+    expected(1) = std::complex<double>(7.75,7.75);
+
+    EXPECT_TRUE(std::real(expected(0)) <= std::real(mid_out(0))+0.1 && std::real(expected(0)) >= std::real(mid_out(0))-0.1);
+    EXPECT_TRUE(std::imag(expected(0)) <= std::imag(mid_out(0))+0.1 && std::imag(expected(0)) >= std::imag(mid_out(0))-0.1);
+    EXPECT_TRUE(std::real(expected(1)) <= std::real(mid_out(1))+0.1 && std::real(expected(1)) >= std::real(mid_out(1))-0.1);
+    EXPECT_TRUE(std::imag(expected(1)) <= std::imag(mid_out(1))+0.1 && std::imag(expected(1)) >= std::imag(mid_out(1))-0.1);
+
+    EXPECT_FLOAT_EQ(std::norm(expected(0)), std::norm(simp_out(0)));
+    EXPECT_FLOAT_EQ(std::norm(expected(1)), std::norm(simp_out(1)));
+
+    EXPECT_TRUE(std::real(expected(0)) <= std::real(trap_out(0))+0.1 && std::real(expected(0)) >= std::real(trap_out(0))-0.1);
+    EXPECT_TRUE(std::imag(expected(0)) <= std::imag(trap_out(0))+0.1 && std::imag(expected(0)) >= std::imag(trap_out(0))-0.1);
+    EXPECT_TRUE(std::real(expected(1)) <= std::real(trap_out(1))+0.1 && std::real(expected(1)) >= std::real(trap_out(1))-0.1);
+    EXPECT_TRUE(std::imag(expected(1)) <= std::imag(trap_out(1))+0.1 && std::imag(expected(1)) >= std::imag(trap_out(1))-0.1);
+}
+
+TEST(integrate, rank9) {
+    std::string filename = "../tests/int_rank9.txt";
+    TxtReader reader = TxtReader(filename);
+    Data data = reader.OutputData();
+    auto mid_out = MidpointFormula(data, &func).Solve();
+    auto trap_out = TrapezoidalRule(data, &func).Solve();
+    auto simp_out = SimpsonsRule(data, &func).Solve();
+
+    Eigen::VectorXcd expected (1);
+    double real = 977.0/60.0;
+    double imag = -464.0/60.0;
+    expected(0) = std::complex<double>(real,imag);
+
+    std::cout << std::real(expected(0)) << std::endl;
+    std::cout << std::real(mid_out(0)) << std::endl;
+
+    EXPECT_TRUE(std::real(expected(0)) <= std::real(mid_out(0))+0.1 && std::real(expected(0)) >= std::real(mid_out(0))-0.1);
+    EXPECT_TRUE(std::imag(expected(0)) <= std::imag(mid_out(0))+0.1 && std::imag(expected(0)) >= std::imag(mid_out(0))-0.1);
+
+    EXPECT_TRUE(std::real(expected(0)) <= std::real(simp_out(0))+0.1 && std::real(expected(0)) >= std::real(simp_out(0))-0.1);
+    EXPECT_TRUE(std::imag(expected(0)) <= std::imag(simp_out(0))+0.1 && std::imag(expected(0)) >= std::imag(simp_out(0))-0.1);
+
+    EXPECT_TRUE(std::real(expected(0)) <= std::real(trap_out(0))+0.1 && std::real(expected(0)) >= std::real(trap_out(0))-0.1);
+    EXPECT_TRUE(std::imag(expected(0)) <= std::imag(trap_out(0))+0.1 && std::imag(expected(0)) >= std::imag(trap_out(0))-0.1);
+
+}
