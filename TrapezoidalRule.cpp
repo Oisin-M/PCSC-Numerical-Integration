@@ -35,7 +35,7 @@ Eigen::VectorXcd TrapezoidalRule::Solve() {
 
         for (int j=1; j<data.noSteps(d,0); ++j) {
             vec+= 2*f(x0+j*hx, y0, data.coefficients);
-            vec+= 2*f(xf+j*hx, yf, data.coefficients);
+            vec+= 2*f(x0+j*hx, yf, data.coefficients);
         }
 
         vec*=hx*hy/4;
