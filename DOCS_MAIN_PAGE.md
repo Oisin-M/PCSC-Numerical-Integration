@@ -58,8 +58,8 @@ MidpointFormula:
 125 + -3.75i ]
 
 TrapezoidalRule:
-[ 202.09 + 390.886i,
-125.909 + -3.65909i ]
+[ 199.863 + 388.231i,
+125 + -3.75i ]
 
 SimpsonsRule:
 [ 199.833 + 388.125i,
