@@ -142,7 +142,7 @@ Eigen::VectorXcd(*&#160;</td><td class="memItemRight" valign="bottom"><b>f</b> )
 
 <p>Method to compute approximate value of the 2D or 1D integral with Trapezoidal Rule. </p>
 <p>Takes as input a <a class="el" href="struct_data.html" title="Struct storing data for the integral computation. ">Data</a> struct and implements a <a class="el" href="class_trapezoidal_rule.html#ae822d86948bdc8876bf524cd620e11b8" title="Method to compute approximate value of the 2D or 1D integral with Trapezoidal Rule. ">Solve()</a> method returning the 2D or 1D Trapezoidal Rule approximation of the integral </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{eqnarray*} I \approx&amp; \frac{h_x h_y}{4} \left[ f(x_0, y_0)+f(x_0,y_f)+f(x_f,y_0)+f(x_f,y_f) + 4 \sum_{i=1}^{n_y-1} \sum_{j=1}^{n_x-1} f(x_j, y_i) \right.\\ &amp; \left. + 2 \sum_{i=1}^{n_y-1} \left(f(x_0, y_i)+f(x_f,y_i)\right) + 2 \sum_{j=1}^{n_x-1} \left(f(x_j, y_0)+f(x_j,y_f)\right) \right] \end{eqnarray*}" src="form_5.png"/>
+<img class="formulaDsp" alt="\begin{eqnarray*} I \approx&amp; \frac{h_x h_y}{4} \left[ f(x_0, y_0)+f(x_0,y_f)+f(x_f,y_0)+f(x_f,y_f) + 4 \sum_{i=1}^{n_y-1} \sum_{j=1}^{n_x-1} f(x_j, y_i) \right.\\ &amp; \left. + 2 \sum_{i=1}^{n_y-1} \left(f(x_0, y_i)+f(x_f,y_i)\right) + 2 \sum_{j=1}^{n_x-1} \left(f(x_j, y_0)+f(x_j,y_f)\right) \right] \end{eqnarray*}" src="form_2.png"/>
 </p>
 <dl class="section return"><dt>Returns</dt><dd>The complex vector result of the integral approximation </dd></dl>
 

@@ -70,7 +70,7 @@ SimpsonsRule:
 ### Configuring the Program
 To run the program with different integrals and different domains of integration, the input file `readfile.txt` can be configured. An example of the format required is shown below:
 
-![image showing file structure](README_Images/file_structure.PNG)
+![image showing file structure](../README_Images/file_structure.PNG)
 
 The first line details the length of inputs the program should expect. The lines (a), (b), (c) and (d) are then read as follows:
 - *(a)* first domain is between x=1 and x=2, y=5 and y=6 and the integration method undergoes 10 steps in the x direction and 11 steps in the y direction
@@ -92,18 +92,6 @@ with `./integration` and view the results of the methods.
 - Documentation of all code
 - Extensible code due to polymorphic approach
 
-### Documentation
-To generate documentation, Doxygen is required to be installed on the system, and can be downloaded [here](https://www.doxygen.nl/download.html).
-- To generate the documentation, the command
-```
-doxygen Doxyfile
-```
-should be run from the root directory.
-- Documentation can be viewed in the `html/` folder. To open the documentation, once can execute the following:
-```
-xdg-open html/index.html
-```
-
 ### Tests
 To execute tests, it suffices to run
 ```
@@ -122,14 +110,3 @@ For the integration, we run tests on polynomials of 4 values of l (l is defined 
 - For l=3, we expect an exact solution for midpoint and Simpson but an approximate solution for trapezoidal.
 - For l=6, we expect an exact solution for Simpson but an approximate solution for midpoint and trapezoidal.
 - For l=9, we expect an approximate solution for all 3 methods.
-
-### Current Issues/Limitations
-- Limited error handling
-- Wasteful to have `Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd &coeff)` take `&coeff` as input
-- No specifiers const and unsigned
-- No use of override
-
-### Suggestions for Future Improvement
-- Extension to 3D or higher
-- Read input from other file structures
-- Store result in a file

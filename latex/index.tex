@@ -1,4 +1,4 @@
-{\itshape R\+E\+A\+D\+ME is located at \href{https://gitlab.epfl.ch/majoor/project-5-numerical-integration}{\tt https\+://gitlab.\+epfl.\+ch/majoor/project-\/5-\/numerical-\/integration}. If images fail to load, view the R\+E\+A\+D\+ME online.}
+{\itshape \href{https://gitlab.epfl.ch/majoor/project-5-numerical-integration}{\tt https\+://gitlab.\+epfl.\+ch/majoor/project-\/5-\/numerical-\/integration}}
 
 \subsubsection*{Compiling the Program for the First Time}
 
@@ -85,6 +85,8 @@ The first line details the length of inputs the program should expect. The lines
 \item $\ast$(d)$\ast$ second function output reads 5-\/6i + (19+1i)x + (0+0i)y + (0+0i)x$^\wedge$2
 \end{DoxyItemize}
 
+{\itshape Note\+: to configure a 1D integration task, it suffices to set all coefficients of y$^\wedge$n terms to 0, and to set the y-\/bounds to differ by 1.}
+
 \subsubsection*{Typical Program Usage}
 
 A typical execution would be to edit the configuration file {\ttfamily readfile.\+txt} to indicate a new integration problem, and then to simply rerun the program with {\ttfamily ./integration} and view the results of the methods.
@@ -100,14 +102,6 @@ A typical execution would be to edit the configuration file {\ttfamily readfile.
 \item Documentation of all code
 \item Extensible code due to polymorphic approach
 \end{DoxyItemize}
-
-\subsubsection*{Documentation}
-
-Documentation can be viewed in the {\ttfamily html/} folder. To open the documentation, once can execute the following\+: 
-\begin{DoxyCode}
-xdg-open html/index.html
-\end{DoxyCode}
-
 
 \subsubsection*{Tests}
 
@@ -130,24 +124,5 @@ For the integration, we run tests on polynomials of 4 values of l (l is defined 
 \item For l=1, we integrate a constant function and expect an exact solution for all 3 methods.
 \item For l=3, we expect an exact solution for midpoint and Simpson but an approximate solution for trapezoidal.
 \item For l=6, we expect an exact solution for Simpson but an approximate solution for midpoint and trapezoidal.
-\item For l=9, we expect an approximate solution for all 3 methods.
-\end{DoxyItemize}
-
-\subsubsection*{Current Issues/\+Limitations}
-
-
-\begin{DoxyItemize}
-\item Limited error handling
-\item Wasteful to have {\ttfamily Eigen\+::\+Vector\+Xcd ($\ast$f)(double x, double y, Eigen\+::\+Matrix\+Xcd \&coeff)} take {\ttfamily \&coeff} as input
-\item No specifiers const and unsigned where appropriate
-\item No use of override
-\end{DoxyItemize}
-
-\subsubsection*{Suggestions for Future Improvement}
-
-
-\begin{DoxyItemize}
-\item Extension to 3D or higher
-\item Read input from other file structures
-\item Store result in a file 
+\item For l=9, we expect an approximate solution for all 3 methods. 
 \end{DoxyItemize}

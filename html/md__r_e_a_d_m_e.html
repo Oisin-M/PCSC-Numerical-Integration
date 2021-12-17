@@ -62,29 +62,69 @@ $(function() {
 <div class="title">Project 5 - Numerical Integration </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h3>Compiling the Program</h3>
+<div class="textblock"><p><em><a href="https://gitlab.epfl.ch/majoor/project-5-numerical-integration">https://gitlab.epfl.ch/majoor/project-5-numerical-integration</a></em></p>
+<h3>Compiling the Program for the First Time</h3>
 <p>The following steps should be undertaken to run our code</p><ul>
-<li>clone the repository with <code>git clone git@gitlab.epfl.ch:majoor/project-5-numerical-integration.git</code></li>
-<li>fetch the submodules (Eigen and Googletest) using <code>git submodule update --init</code></li>
-<li>build the executable using CMAKE <code>[to be done]</code></li>
+<li>clone the repository with <div class="fragment"><div class="line">git clone git@gitlab.epfl.ch:majoor/project-5-numerical-integration.git</div></div><!-- fragment --></li>
+<li>move to the cloned directory <div class="fragment"><div class="line">cd project-5-numerical-integration/</div></div><!-- fragment --></li>
+<li>fetch the submodules (Eigen and Googletest) using <div class="fragment"><div class="line">git submodule update --init</div></div><!-- fragment --></li>
+<li>build the executable using CMAKE <div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake ..</div><div class="line">make</div></div><!-- fragment --></li>
+<li>run the executable <div class="fragment"><div class="line">./integration</div></div><!-- fragment --></li>
 </ul>
-<p>This code will produce the following output: </p><div class="fragment"><div class="line">[to be copy pasted]</div></div><!-- fragment --><h3>Configuring the Program</h3>
-<p>To run the program with different integrals and different domains of integration, the input file can be configured. An example of the format required is shown below:</p>
+<p>This code will produce the following output: </p><div class="fragment"><div class="line">Successfully opened file ../readfile.txt</div><div class="line"></div><div class="line">---Input Data---</div><div class="line"></div><div class="line">D: 2</div><div class="line">m: 2</div><div class="line">boundsX: </div><div class="line">1 2</div><div class="line">6 7</div><div class="line">boundsY: </div><div class="line">  5   6</div><div class="line">  8 9.5</div><div class="line">noSteps: </div><div class="line">10 11</div><div class="line"> 3 10</div><div class="line">coefficients: </div><div class="line">  (1,1) (15,-5) (-2,11) (1,3.6)</div><div class="line"> (5,-6)  (10,1)   (0,0)   (0,0)</div><div class="line"></div><div class="line">---Integration Methods---</div><div class="line"></div><div class="line">MidpointFormula:</div><div class="line">[ 199.819 + 388.072i,</div><div class="line">125 + -3.75i ]</div><div class="line"></div><div class="line">TrapezoidalRule:</div><div class="line">[ 202.09 + 390.886i,</div><div class="line">125.909 + -3.65909i ]</div><div class="line"></div><div class="line">SimpsonsRule:</div><div class="line">[ 199.833 + 388.125i,</div><div class="line">125 + -3.75i ]</div></div><!-- fragment --><h3>Configuring the Program</h3>
+<p>To run the program with different integrals and different domains of integration, the input file <code>readfile.txt</code> can be configured. An example of the format required is shown below:</p>
 <div class="image">
-<img src="README_Images/file_structure.PNG" alt="alt text"/>
+<img src="README_Images/file_structure.PNG" alt="image showing file structure"/>
 </div>
 <p>The first line details the length of inputs the program should expect. The lines (a), (b), (c) and (d) are then read as follows:</p><ul>
-<li>(a) first domain is between x=1 and x=2, y=5 and y=6 and the integration method undergoes 10 steps in the x direction and 11 steps in the y direction</li>
-<li>(b) first domain is between x=6 and x=7, y=8 and y=9.5 and the integration method undergoes 3 steps in the x direction and 10 steps in the y direction</li>
-<li>(c) first function output reads 1+1i + (15-5i)x + (-2+11i)y + (1+3.6i)x^2</li>
-<li>(d) second function output reads 5-6i + (19+1i)x + (0+0i)y + (0+0i)x^2</li>
+<li>*(a)* first domain is between x=1 and x=2, y=5 and y=6 and the integration method undergoes 10 steps in the x direction and 11 steps in the y direction</li>
+<li>*(b)* first domain is between x=6 and x=7, y=8 and y=9.5 and the integration method undergoes 3 steps in the x direction and 10 steps in the y direction</li>
+<li>*(c)* first function output reads 1+1i + (15-5i)x + (-2+11i)y + (1+3.6i)x^2</li>
+<li>*(d)* second function output reads 5-6i + (19+1i)x + (0+0i)y + (0+0i)x^2</li>
 </ul>
+<p><em>Note: to configure a 1D integration task, it suffices to set all coefficients of y^n terms to 0, and to set the y-bounds to differ by 1.</em></p>
 <h3>Typical Program Usage</h3>
-<p>[to be done]</p>
+<p>A typical execution would be to edit the configuration file <code>readfile.txt</code> to indicate a new integration problem, and then to simply rerun the program with <code>./integration</code> and view the results of the methods.</p>
 <h3>Program Features</h3>
-<p>[to be done]</p>
+<ul>
+<li>Reads arbitrary input from file</li>
+<li>Implementation of 3 integration methods in 2D and 1D</li>
+<li>Error handling</li>
+<li>Individual testing of all features</li>
+<li>Documentation of all code</li>
+<li>Extensible code due to polymorphic approach</li>
+</ul>
+<h3>Documentation</h3>
+<p>To generate documentation, Doxygen is required to be installed on the system, and can be downloaded <a href="https://www.doxygen.nl/download.html">here</a>.</p><ul>
+<li>To generate the documentation, the command <div class="fragment"><div class="line">doxygen Doxyfile</div></div><!-- fragment --> should be run from the root directory.</li>
+<li>Documentation can be viewed in the <code>html/</code> folder. To open the documentation, once can execute the following: <div class="fragment"><div class="line">xdg-open html/index.html</div></div><!-- fragment --></li>
+</ul>
 <h3>Tests</h3>
-<p>[to be done] </p>
+<p>To execute tests, it suffices to run </p><div class="fragment"><div class="line">./Tests</div></div><!-- fragment --><p> from the <code>build/</code> directory.</p>
+<p>Two types of test are run using googletest :</p><ul>
+<li>Tests of the text file reader</li>
+<li>Tests of the integration methods</li>
+</ul>
+<p>For the reader, we execute a few death tests to ensure that the first inputs are asserted to be positive.</p>
+<p>For the integration, we run tests on polynomials of 4 values of l (l is defined above).</p><ul>
+<li>For l=1, we integrate a constant function and expect an exact solution for all 3 methods.</li>
+<li>For l=3, we expect an exact solution for midpoint and Simpson but an approximate solution for trapezoidal.</li>
+<li>For l=6, we expect an exact solution for Simpson but an approximate solution for midpoint and trapezoidal.</li>
+<li>For l=9, we expect an approximate solution for all 3 methods.</li>
+</ul>
+<h3>Current Issues/Limitations</h3>
+<ul>
+<li>Limited error handling</li>
+<li>Wasteful to have <code>Eigen::VectorXcd (*f)(double x, double y, Eigen::MatrixXcd &amp;coeff)</code> take <code>&amp;coeff</code> as input</li>
+<li>No specifiers const and unsigned</li>
+<li>No use of override</li>
+</ul>
+<h3>Suggestions for Future Improvement</h3>
+<ul>
+<li>Extension to 3D or higher</li>
+<li>Read input from other file structures</li>
+<li>Store result in a file </li>
+</ul>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
