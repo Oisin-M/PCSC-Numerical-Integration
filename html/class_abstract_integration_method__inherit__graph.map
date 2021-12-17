@@ -1,5 +1,0 @@
-<map id="AbstractIntegrationMethod" name="AbstractIntegrationMethod">
-<area shape="rect" id="node2" href="$class_midpoint_formula.html" title="Class implementing the Midpoint Formula approximation of integrals in 2D or 1D. " alt="" coords="5,80,124,107"/>
-<area shape="rect" id="node3" href="$class_simpsons_rule.html" title="Class implementing the Simpson&#39;s Rule approximation of integrals in 2D or 1D. " alt="" coords="149,80,255,107"/>
-<area shape="rect" id="node4" href="$class_trapezoidal_rule.html" title="Class implementing the Trapezoidal Rule approximation of integrals in 2D or 1D. " alt="" coords="280,80,396,107"/>
-</map>
